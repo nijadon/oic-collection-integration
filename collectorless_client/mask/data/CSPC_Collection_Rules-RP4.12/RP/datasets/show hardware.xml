@@ -1,0 +1,62 @@
+<Dataset identifier="_show hardware">
+	<Title>show hardware</Title>
+	<Description>Mandatory,Optional source of ACNS/WAAS SN</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_8500">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_ACNS">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_ACNS_1">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CCM4x">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CCM5x">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_SanOS">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_ECDS">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CDS">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_StarOS">
+			<CLI>
+				<Command>show hardware</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

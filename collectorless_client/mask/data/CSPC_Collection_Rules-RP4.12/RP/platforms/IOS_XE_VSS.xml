@@ -1,0 +1,21 @@
+<Platform identifier="_IOS_XE_VSS">
+<Title>IOS_XE_VSS</Title>
+<Description>IOS-XE Switches with VSS Enabled</Description>
+<MatchType>ALL</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.1732</Value>
+    </ValueList>
+  </PlatformCondition>
+  <PlatformCondition>
+      <PropertyName>SNMP_SYS_DESCR</PropertyName>
+      <Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+      <ValueList>
+          <Value><![CDATA[.*IOS-XE.*]]></Value>
+      </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

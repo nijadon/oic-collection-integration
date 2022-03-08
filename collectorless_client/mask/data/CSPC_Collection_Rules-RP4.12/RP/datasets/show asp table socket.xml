@@ -1,0 +1,20 @@
+<Dataset identifier="_show asp table socket">
+	<Title>show asp table socket</Title>
+	<Description>Optional,Added in RP4.3</Description>
+	<CategoryName>CLI-Security</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_PixOS">
+			<CLI>
+				<Command>show asp table socket</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_FTD">
+			<CLI>
+				<Command>show asp table socket</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

@@ -1,0 +1,9 @@
+boto3
+botocore
+flask
+requests
+paramiko
+scp
+python-dotenv
+requests
+aws-requests-auth

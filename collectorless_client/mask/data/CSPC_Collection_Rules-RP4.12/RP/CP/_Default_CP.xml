@@ -1,0 +1,327 @@
+<CollectionProfile identifier="_Default_CP">
+	<Title>PSS Full</Title>
+	<ServiceName>partner_support_service</ServiceName>
+	<RulePackageVersion>4.12</RulePackageVersion>
+	<ExportOptions>
+		<FileName>Default_VSEM</FileName>
+		<Format>CISCO_VSEM</Format>
+		<UploadToRemoteServer>true</UploadToRemoteServer>
+	</ExportOptions>
+	<CreatedUser>CSPCAdmin</CreatedUser>
+	<CreationTime>1407362779042</CreationTime>
+	<Locked>false</Locked>
+	<ExportSeedFile>false</ExportSeedFile>
+	<ApplicationDiscoveryProfile>false</ApplicationDiscoveryProfile>
+	<DisableCollectionInterval>false</DisableCollectionInterval>
+	<Priority>Medium</Priority>
+	<PreserveRunCount>1</PreserveRunCount>
+	<CredentialFallback>false</CredentialFallback>
+	<RunDiscoveryBeforeExecution>true</RunDiscoveryBeforeExecution>
+	<RunDAVBeforeExecution>true</RunDAVBeforeExecution>
+	<RunPromptCollectionBeforeExecution>false</RunPromptCollectionBeforeExecution>
+	<DeviceSelection all="true"/>
+	<DatasetList>
+		<Dataset>_admin mode show configuration failed startup</Dataset>
+		<Dataset>_admin mode show running-config</Dataset>
+		<Dataset>_admin show diag detail</Dataset>
+		<Dataset>_admin show filesystem location all</Dataset>
+		<Dataset>_admin show fpd package</Dataset>
+		<Dataset>_admin show install active detail</Dataset>
+		<Dataset>_admin show install active summary</Dataset>
+		<Dataset>_admin show install active</Dataset>
+		<Dataset>_admin show install committed detail</Dataset>
+		<Dataset>_admin show install committed summary</Dataset>
+		<Dataset>_admin show install committed</Dataset>
+		<Dataset>_admin show inventory all</Dataset>
+		<Dataset>_admin show platform</Dataset>
+		<Dataset>_admin show version</Dataset>
+		<Dataset>_AIRESPACE_SWITCHING_MIB</Dataset>
+		<Dataset>_AIRESPACE_WIRELESS_MIB_bsnAP</Dataset>
+		<Dataset>_ALTIGA_HARDWARE_STATS_MIB</Dataset>
+		<Dataset>_ALTIGA_VERSION_STATS_MIB</Dataset>
+		<Dataset>_BASIS_CARD_GENERIC_1_3_6_1_4_1_351_110_2_1</Dataset>
+		<Dataset>_BASIS_SHELF_shelf</Dataset>
+		<Dataset>_CALISTA_DPA_MIB</Dataset>
+		<Dataset>_CHASSISMGREXT_MIB_apChassisMgrExtModule</Dataset>
+		<Dataset>_CHASSISMGREXT_MIB</Dataset>
+		<Dataset>_CISCO_CCM_MIB_ccm</Dataset>
+		<Dataset>_CISCO_CCM_MIB_ccmGatewayEntry</Dataset>
+		<Dataset>_CISCO_CCM_MIB_ccmGlobalInfo</Dataset>
+		<Dataset>_CISCO_CCM_MIB_ccmGroup</Dataset>
+		<Dataset>_CISCO_CCM_MIB_ccmPhoneEntry</Dataset>
+		<Dataset>_CISCO_CCM_MIB_ccmPhoneExtn</Dataset>
+		<Dataset>_CISCO_CCM_MIB_ccmProduct</Dataset>
+		<Dataset>_CISCO_CCM_MIB_ccmRegion</Dataset>
+		<Dataset>_CISCO_CDP_MIB_cdpCache</Dataset>
+		<Dataset>_CISCO_ENHANCED_MEMPOOL_MIB_cempMemPool</Dataset>
+		<Dataset>_CISCO_FLASH_MIB_ciscoFlashDevice</Dataset>
+		<Dataset>_CISCO_FLASH_MIB_ciscoFlashFile</Dataset>
+		<Dataset>_CISCO_FLASH_MIB_ciscoFlashPartition</Dataset>
+		<Dataset>_CISCO_MEMORY_POOL_MIB_ciscoMemoryPool</Dataset>
+		<Dataset>_CISCO_STACK_MIB_Module</Dataset>
+		<Dataset>_CISCO_STACK_MIB</Dataset>
+		<Dataset>_CISCO-CLUSTER-MIB_ccMemberTable</Dataset>
+		<Dataset>_CISCO-ENTITY-ASSET-MIB_ceAssetTable</Dataset>
+		<Dataset>_CISCO-FIREPOWER-EQUIPMENT-MIB_cfprEquipmentChassis</Dataset>
+		<Dataset>_CISCO-FIREPOWER-EQUIPMENT-MIB_cfprEquipmentFanModule</Dataset>
+		<Dataset>_CISCO-FIREPOWER-EQUIPMENT-MIB_cfprEquipmentPsu</Dataset>
+		<Dataset>_CISCO-FIREPOWER-EQUIPMENT-MIB_cfprEquipmentXcvr</Dataset>
+		<Dataset>_CISCO-FIREPOWER-FIRMWARE-MIB_cfprFirmwarePlatformPack</Dataset>
+		<Dataset>_CISCO-FIREPOWER-OS-MIB_cfprOsController</Dataset>
+		<Dataset>_CISCO-FIREPOWER-STORAGE-MIB_StorageController</Dataset>
+		<Dataset>_CISCO-FIREPOWER-STORAGE-MIB_StorageLocalDisk</Dataset>
+		<Dataset>_CISCO-PROCESS-MIB_cpmCPUTotalTable</Dataset>
+		<Dataset>_CISCO-STACKWISE-MIB_cswGlobals</Dataset>
+		<Dataset>_CISCO-STACKWISE-MIB_cswSwitchInfoTable</Dataset>
+		<Dataset>_CISCO-TELEPRESENCE-MIB</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-ADAPTOR-MIB</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-COMPUTE-MIB_ComputeBlade</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-COMPUTE-MIB_ComputeBoard</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-COMPUTE-MIB_ComputeRackUnit</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-EQUIPMENT-MIB_CucsEquipmentXcvrEntry</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-EQUIPMENT-MIB_EquipmentFanEntry</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-EQUIPMENT-MIB_EquipmentIOCardEntry</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-EQUIPMENT-MIB_EquipmentPsuEntry</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-EQUIPMENT-MIB_EquipmentSwitchCardEntry</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-FABRIC-MIB</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-FIRMWARE-MIB</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-MEMORY-MIB</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-NETWORK-MIB</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-PROCESSOR-MIB</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-STORAGE-MIB_StorageController</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-STORAGE-MIB</Dataset>
+		<Dataset>_CISCO-UNIFIED-COMPUTING-VM-MIB</Dataset>
+		<Dataset>_CISCO-VDC-MIB_ciscoVdcTable</Dataset>
+		<Dataset>_CISCO-VIRTUAL-SWITCH-MIB_cvsChassisTable</Dataset>
+		<Dataset>_CISCO-VIRTUAL-SWITCH-MIB_cvsCoreSwitchConfigTable</Dataset>
+		<Dataset>_CISCO-VIRTUAL-SWITCH-MIB_cvsGlobalObjects</Dataset>
+		<Dataset>_ciscoImageString</Dataset>
+		<Dataset>_CPQHOST_MIB_cpqHoCpuUtil</Dataset>
+		<Dataset>_CPQHOST_MIB</Dataset>
+		<Dataset>_CPQSINFO_MIB</Dataset>
+		<Dataset>_CPQSTDEQ_MIB</Dataset>
+		<Dataset>_device_query</Dataset>
+		<Dataset>_DL_OSPF_Database_CLI</Dataset>
+		<Dataset>_DL_OSPF_Neighbor_CLI</Dataset>
+    	<Dataset>_DL_show license right-to-use_CLI</Dataset>
+		<Dataset>_DL_show mac address-table count_CLI</Dataset>
+		<Dataset>_DL_show mac address-table dynamic_CLI</Dataset>
+		<Dataset>_DL_show memory statistics_CLI</Dataset>
+		<Dataset>_ENTITY_MIB_entPhysical</Dataset>
+		<Dataset>_FCMGMT_MIB_connUnit</Dataset>
+		<Dataset>_HOST_RESOURCES_MIB_hrDevice</Dataset>
+		<Dataset>_HOST_RESOURCES_MIB_hrDiskStorageCapacity</Dataset>
+		<Dataset>_HOST_RESOURCES_MIB_hrStorage</Dataset>
+		<Dataset>_HOST_RESOURCES_MIB_hrSWInstalled</Dataset>
+		<Dataset>_HOST_RESOURCES_MIB</Dataset>
+		<Dataset>_iBMPSGSerialNumberInformationTable</Dataset>
+		<Dataset>_IF_MIB_if</Dataset>
+		<Dataset>_IP-MIB_ipAddressTable</Dataset>
+		<Dataset>_MSSQLSERVER_MIB_mssqlSrv</Dataset>
+		<Dataset>_NETAPP-MIB_nodeTable</Dataset>
+		<Dataset>_netstat</Dataset>
+		<Dataset>_OLD_CISCO_CHASSIS_MIB_Card</Dataset>
+		<Dataset>_OLD_CISCO_CHASSIS_MIB</Dataset>
+		<Dataset>_OLD_CISCO_SYS_MIB</Dataset>
+		<Dataset>_PCUBE_SE_MIB_pmodule</Dataset>
+		<Dataset>_PCUBE_SE_MIB_pport</Dataset>
+		<Dataset>_RFC1213_MIB_if</Dataset>
+		<Dataset>_RFC1213_MIB_ipAdEnt</Dataset>
+		<Dataset>_RHINO_CHASSIS_ciscoLS1010</Dataset>
+		<Dataset>_RHINO_MODULE_ciscoLS1010Module</Dataset>
+		<Dataset>_RHINO_SUBMODULE_ciscoLS1010SubModule</Dataset>
+		<Dataset>_rvUnitGeneral</Dataset>
+		<Dataset>_SHELF_SLOT_INFO_slot</Dataset>
+		<Dataset>_show ap inventory all</Dataset>
+		<Dataset>_show ap summary</Dataset>
+		<Dataset>_show arp</Dataset>
+		<Dataset>_show asp table socket</Dataset>
+		<Dataset>_show boot_config</Dataset>
+		<Dataset>_show buffers</Dataset>
+		<Dataset>_show c7200</Dataset>
+		<Dataset>_show cable licenses all</Dataset>
+		<Dataset>_show call-home</Dataset>
+		<Dataset>_show callhome</Dataset>
+		<Dataset>_show card_inventory</Dataset>
+		<Dataset>_show card</Dataset>
+		<Dataset>_show cdp neighbors detail</Dataset>
+		<Dataset>_show cdp neighbors</Dataset>
+		<Dataset>_show chassis detail</Dataset>
+		<Dataset>_show chassis eeprom</Dataset>
+		<Dataset>_show chassis inventory expand detail</Dataset>
+		<Dataset>_show chassis inventory expand</Dataset>
+		<Dataset>_show chassis</Dataset>
+		<Dataset>_show cluster members</Dataset>
+		<Dataset>_show cluster state</Dataset>
+		<Dataset>_show cluster</Dataset>
+		<Dataset>_show config all</Dataset>
+		<Dataset>_show config</Dataset>
+		<Dataset>_show configuration failed startup</Dataset>
+		<Dataset>_show configuration</Dataset>
+		<Dataset>_show context location all</Dataset>
+		<Dataset>_show control connections</Dataset>
+		<Dataset>_show control local-properties</Dataset>
+		<Dataset>_show control_plane host open_ports</Dataset>
+		<Dataset>_show diag chassis eeprom detail</Dataset>
+		<Dataset>_show diag chassis</Dataset>
+		<Dataset>_show diag detail</Dataset>
+		<Dataset>_show diag</Dataset>
+		<Dataset>_show dlsw peer</Dataset>
+		<Dataset>_show eigrp neighbors</Dataset>
+		<Dataset>_show env all</Dataset>
+		<Dataset>_show environment all</Dataset>
+		<Dataset>_show environment</Dataset>
+		<Dataset>_show fabric_interconnect inventory expand detail</Dataset>
+		<Dataset>_show fabric_interconnect inventory</Dataset>
+		<Dataset>_show failover</Dataset>
+		<Dataset>_show fex detail</Dataset>
+		<Dataset>_show filesystem location all</Dataset>
+		<Dataset>_show gslb_config</Dataset>
+		<Dataset>_show gsr chassis_info</Dataset>
+		<Dataset>_show hardware all</Dataset>
+		<Dataset>_show hardware inventory</Dataset>
+		<Dataset>_show hardware</Dataset>
+		<Dataset>_show idprom all detail _ include IDPROM for_CISCO_STACK_MIB_card index_Deviation_SNMP OID_CLEI_VID_Product Number</Dataset>
+		<Dataset>_show idprom all</Dataset>
+		<Dataset>_show idprom switch all</Dataset>
+		<Dataset>_show image</Dataset>
+		<Dataset>_show install active detail</Dataset>
+		<Dataset>_show install active summary</Dataset>
+		<Dataset>_show install active</Dataset>
+		<Dataset>_show install committed detail</Dataset>
+		<Dataset>_show install committed summary</Dataset>
+		<Dataset>_show install committed</Dataset>
+		<Dataset>_show interface stat</Dataset>
+		<Dataset>_show interface status</Dataset>
+		<Dataset>_show interface switching</Dataset>
+		<Dataset>_show interface transceiver</Dataset>
+		<Dataset>_show interface trunk</Dataset>
+		<Dataset>_show interface</Dataset>
+		<Dataset>_show interfaces accounting</Dataset>
+		<Dataset>_show inventory all</Dataset>
+		<Dataset>_show inventory</Dataset>
+		<Dataset>_show ip arp</Dataset>
+		<Dataset>_show ip eigrp neighbors vrf all</Dataset>
+		<Dataset>_show ip eigrp neighbors</Dataset>
+		<Dataset>_show ip interface</Dataset>
+		<Dataset>_show ip route summary</Dataset>
+		<Dataset>_show ip sockets</Dataset>
+		<Dataset>_show ip ssh</Dataset>
+		<Dataset>_show isis adjacency</Dataset>
+		<Dataset>_show isis database</Dataset>
+		<Dataset>_show isis neighbors</Dataset>
+		<Dataset>_show license all</Dataset>
+		<Dataset>_show license feature</Dataset>
+		<Dataset>_show license right-to-use</Dataset>
+		<Dataset>_show license usage</Dataset>
+		<Dataset>_show license</Dataset>
+		<Dataset>_show lldp neighbors detail</Dataset>
+		<Dataset>_show lldp neighbors</Dataset>
+		<Dataset>_show memory statistics</Dataset>
+		<Dataset>_show memory</Dataset>
+		<Dataset>_show mode</Dataset>
+		<Dataset>_show module switch all</Dataset>
+		<Dataset>_show module</Dataset>
+		<Dataset>_show network all</Dataset>
+		<Dataset>_show network summary</Dataset>
+		<Dataset>_show network</Dataset>
+		<Dataset>_show platform</Dataset>
+		<Dataset>_show policy-map interface all</Dataset>
+		<Dataset>_show policy-map interface</Dataset>
+		<Dataset>_show processes cpu history</Dataset>
+		<Dataset>_show processes cpu</Dataset>
+		<Dataset>_show processes</Dataset>
+		<Dataset>_show pxf cpu stat ip</Dataset>
+		<Dataset>_show redundancy</Dataset>
+		<Dataset>_show redundancy peer-system statistics</Dataset>
+		<Dataset>_show rogue ap summary</Dataset>
+		<Dataset>_show rom-monitor</Dataset>
+		<Dataset>_show rsp chassis_info</Dataset>
+		<Dataset>_show run_config commands</Dataset>
+		<Dataset>_show run_config</Dataset>
+		<Dataset>_show running_config all</Dataset>
+		<Dataset>_show running_config_asa_system</Dataset>
+		<Dataset>_show running_config</Dataset>
+		<Dataset>_show server_inventory expand detail</Dataset>
+		<Dataset>_show sessions</Dataset>
+		<Dataset>_show snmp</Dataset>
+		<Dataset>_show sockets connection</Dataset>
+		<Dataset>_show spanning-tree</Dataset>
+		<Dataset>_show sprom all</Dataset>
+		<Dataset>_show sprom fex all</Dataset>
+		<Dataset>_show standby</Dataset>
+		<Dataset>_show startup_config_asa_system</Dataset>
+		<Dataset>_show startup_config</Dataset>
+		<Dataset>_show status</Dataset>
+		<Dataset>_show switch virtual role</Dataset>
+		<Dataset>_show switch virtual</Dataset>
+		<Dataset>_show switch</Dataset>
+		<Dataset>_show sysinfo</Dataset>
+		<Dataset>_show system status</Dataset>		
+		<Dataset>_show system</Dataset>		
+		<Dataset>_show tcp brief all numeric</Dataset>
+		<Dataset>_show tcp brief all</Dataset>
+		<Dataset>_show tcp brief</Dataset>
+		<Dataset>_show test</Dataset>
+		<Dataset>_show udp brief</Dataset>
+		<Dataset>_show udp</Dataset>
+		<Dataset>_show version brief</Dataset>
+		<Dataset>_show version system</Dataset>
+		<Dataset>_show version</Dataset>
+		<Dataset>_show vlan</Dataset>
+		<Dataset>_show vstack config</Dataset>
+		<Dataset>_show vtp domain</Dataset>
+		<Dataset>_show vtp status</Dataset>
+		<Dataset>_show wlan summary</Dataset>
+		<Dataset>_SNMP_RUNNING</Dataset>
+		<Dataset>_SNMP_STARTUP</Dataset>
+		<Dataset>_SNMPV2_MIB</Dataset>
+		<Dataset>_STARENT_MIB_starentChassis</Dataset>
+		<Dataset>_STARENT_MIB_starFanEntry</Dataset>
+		<Dataset>_STARENT_MIB_StarPowerEntry</Dataset>
+		<Dataset>_STARENT_MIB_starSlotTable</Dataset>
+		<Dataset>_STRATACOM_MIB</Dataset>
+		<Dataset>_SYSAPPL_MIB_sysApplInstallElmt</Dataset>
+		<Dataset>_SYSAPPL_MIB_sysApplInstallPkg</Dataset>
+		<Dataset>_SYSAPPL_MIB_sysApplRun</Dataset>
+		<Dataset>_TOPSPIN_MIB_1_3_6_1_4_1_6203_1_2_3_1_1</Dataset>
+		<Dataset>_TOPSPIN_MIB_tsDev</Dataset>
+		<Dataset>_TOPSPIN_MIB_tsDevCard</Dataset>
+		<Dataset>_TOPSPIN_MIB</Dataset>
+		<Dataset>_TP_Codecs_DYN_CISCO_CDP_MIB_cdpCache</Dataset>
+		<Dataset>_TP_Codecs_DYN_CISCO-ENTITY-ASSET-MIB_ceAssetTable</Dataset>
+		<Dataset>_TP_Codecs_DYN_CISCO-TELEPRESENCE-MIB</Dataset>
+		<Dataset>_TP_Codecs_DYN_ENTITY_MIB_entPhysical</Dataset>
+		<Dataset>_TP_Codecs_DYN_IF_MIB_if</Dataset>
+		<Dataset>_TP_Codecs_DYN_RFC1213_MIB_if</Dataset>
+		<Dataset>_TP_Codecs_DYN_RFC1213_MIB_ipAdEnt</Dataset>
+		<Dataset>_TP_Codecs_DYN_SNMPV2_MIB</Dataset>
+		<Dataset>_VIPTELA-HARDWARE_hardwareInventoryTable</Dataset>
+		<Dataset>_VIPTELA-OPER-SYSTEM_systemStatus</Dataset>
+		<Dataset>_xconfiguration</Dataset>
+		<Dataset>_xstatus</Dataset>
+		<Dataset>CCME_CC_ccmeConfig</Dataset>
+		<Dataset>CCME_CC_ccmeEphoneActTable</Dataset>
+		<Dataset>CCME_CC_ccmeEphoneConfTable</Dataset>
+		<Dataset>CISCO-CLUSTER-MIB_ccCandidateTable</Dataset>
+		<Dataset>Cluster_Member_show_cluster</Dataset>
+		<Dataset>Cluster_Member_show_env_power</Dataset>
+		<Dataset>Cluster_Member_show_flash</Dataset>
+		<Dataset>Cluster_Member_show_interface</Dataset>
+		<Dataset>Cluster_Member_show_inventory</Dataset>
+		<Dataset>Cluster_Member_show_running-config</Dataset>
+		<Dataset>Cluster_Member_show_startup-config</Dataset>
+		<Dataset>Cluster_Member_show_switch</Dataset>
+		<Dataset>Cluster_Member_show_version</Dataset>
+		<Dataset>show_context_asa_run_dyn</Dataset>
+		<Dataset>show_context_asa_strat_dyn</Dataset>
+		<Dataset>show_context_run_dyn</Dataset>
+		<Dataset>show_context_start_dyn</Dataset>
+		<Dataset>show_vdc_run_dyn</Dataset>
+		<Dataset>show_vdc_start_dyn</Dataset>
+	</DatasetList>
+	<DataPrivacy>
+		<IsIPPrivacyEnabled>false</IsIPPrivacyEnabled>
+		<IsHostPrivacyEnabled>false</IsHostPrivacyEnabled>
+	</DataPrivacy>
+</CollectionProfile>

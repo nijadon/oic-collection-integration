@@ -1,0 +1,26 @@
+<Dataset identifier="_show sprom fex all">
+	<Title>show sprom fex all</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_NXOS">
+			<CLI>
+				<Command>show sprom fex all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_MDS">
+			<CLI>
+				<Command>show sprom fex all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_VDC">
+			<CLI>
+				<Command>show sprom fex all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

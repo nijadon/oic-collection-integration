@@ -1,0 +1,16 @@
+<Request xmlns="http://www.parinetworks.com/api/schemas/1.1" requestId="44445">
+<Manage>
+<Delete operationId="1" forceIfLocked="true">
+	<PlatformList>
+		<Platform identifier="_CCM" />
+		<Platform identifier="_IOS_12000_1" />
+		<Platform identifier="_IOS_4000" />
+		<Platform identifier="_IOS_WLC" />
+		<Platform identifier="_MIB_II" />
+		<Platform identifier="_MIB_II_1" />
+		<Platform identifier="_NXOS_1" />
+		<Platform identifier="_SanOS_1" />
+	</PlatformList>
+</Delete>
+</Manage>
+</Request>

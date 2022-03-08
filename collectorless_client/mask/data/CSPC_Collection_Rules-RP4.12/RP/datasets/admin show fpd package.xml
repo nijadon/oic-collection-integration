@@ -1,0 +1,28 @@
+<Dataset identifier="_admin show fpd package">
+	<Title>admin show fpd package</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CreatedUser>administrator</CreatedUser>
+	<Locked>false</Locked>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XR">
+			<CLI>
+				<Command>admin show fpd package</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XR_1">
+			<CLI>
+				<Command>admin show fpd package</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NCS_IOS_XR">
+			<CLI>
+				<Command>admin show fpd package</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

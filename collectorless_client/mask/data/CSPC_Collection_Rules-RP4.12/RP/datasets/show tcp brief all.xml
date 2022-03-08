@@ -1,0 +1,14 @@
+<Dataset identifier="_show tcp brief all">
+	<Title>show tcp brief all</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Security</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XE_VSS">
+			<CLI>
+				<Command>show tcp brief all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

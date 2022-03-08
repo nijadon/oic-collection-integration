@@ -1,0 +1,81 @@
+<Dataset identifier="Cluster_Member_show_inventory">
+  <Type>Dynamic</Type>
+  <Title>DL_Cluster_Member_show_inventory</Title>
+  <CollectionType>SNMP</CollectionType>
+  <CollectionInterval>0</CollectionInterval>
+  <CategoryName>Cluster</CategoryName>
+  <Statements>
+    <Loop identifier="loop1">
+      <Title>Get SNMP Interface Class</Title>
+      <VectorInput>
+        <SNMPTable>
+          <Input>
+          <Dataset>
+            <DatasetName Failure="error_message">_ccMemberNumber</DatasetName>
+          </Dataset>
+        </Input>
+          <Rows>
+          </Rows>
+        </SNMPTable>
+      </VectorInput>
+      <Statements>
+        <Condition identifier="loop1_cond_last">
+          <Title>Save the clusternumber</Title>
+          <Input>
+          <SNMPValue>
+            <LoopContext></LoopContext>
+          </SNMPValue>
+        </Input>
+          <Operation>
+            <Matches ignoreCase="false">^(.*)$</Matches>
+          </Operation>
+          <Match>
+            <Assignment>
+              <Variable append="true" onlyIfNotNull="true" trim="true" vectorType="Set" operation="add">clusterList</Variable>
+              <Values>
+                <Value>&lt;loop1_cond_last.1&gt;</Value></Values>
+            </Assignment>
+            <Continue></Continue>
+          </Match>
+          <NonMatch>
+            <Goto></Goto>
+          </NonMatch>
+        </Condition>
+      </Statements>
+    </Loop>
+    <Loop identifier="loop2">
+      <VectorInput>
+        <Variable unique = "true">
+          <VariableName>clusterList</VariableName>
+        </Variable>
+      </VectorInput>
+      <Statements>
+        <Condition identifier="output_cond">
+          <Input>
+          <LoopContext></LoopContext>
+        </Input>
+          <Operation>
+            <Matches ignoreCase="false">^(?:(?:[1-9])|(?:[0-9]\d+))$</Matches>
+          </Operation>
+          <Match>
+            <Assignment>
+              <Variable append="false" onlyIfNotNull="true" trim="true" vectorType="Set" operation="add">number</Variable>
+              <Value></Value></Assignment>
+            <Output>
+              <Dataset>
+                <DatasetName>_Cluster_IOSCat_show_inventory</DatasetName>
+                <Variables>
+                  <Variable>number</Variable>
+                </Variables>
+              </Dataset>
+            </Output>
+            <Goto></Goto>
+          </Match>
+          <NonMatch>
+            <Goto></Goto>
+          </NonMatch>
+        </Condition>
+      </Statements>
+    </Loop>
+  </Statements>
+</Dataset>

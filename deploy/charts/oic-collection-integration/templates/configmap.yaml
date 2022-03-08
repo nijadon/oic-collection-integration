@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: {{ template "oic-collection-integration.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    component: "{{ template "oic-collection-integration.name" . }}"
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+  name: {{ template "oic-collection-integration.fullname" . }}-environment-properties
+data:
+  environment.properties: |
+{{- range $key, $value := index .Values.files "environment.properties" }}
+    {{ $key }} = {{ $value }}
+{{- end }}

@@ -1,0 +1,37 @@
+<Dataset identifier="_CALISTA_DPA_MIB">
+	<Title>CALISTA-DPA-MIB</Title>
+	<Description>Optional,DPA Serial Number</Description>
+	<CategoryName>SNMP</CategoryName>
+	<CollectionType>SNMP</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_DPA">
+			<SNMP>
+				<SNMPRequest>
+					<RequestType>Scalar</RequestType>
+					<ObjectList>
+						<Object>
+							<Id>.1.3.6.1.4.1.7505.1.1.1.0</Id>
+							<Title>serialNumber</Title>
+							<Type>Scalar</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.7505.1.1.2.0</Id>
+							<Title>imageVersion</Title>
+							<Type>Scalar</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.7505.1.1.3.0</Id>
+							<Title>loaderVersion</Title>
+							<Type>Scalar</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.7505.1.1.4.0</Id>
+							<Title>integrationMode</Title>
+							<Type>Scalar</Type>
+						</Object>
+					</ObjectList>
+				</SNMPRequest>
+			</SNMP>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

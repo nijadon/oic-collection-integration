@@ -1,0 +1,12 @@
+<Catalog identifier='RP4.12'>
+   <Title>RP4.12</Title>
+   <Description>Collection Rules Package</Description>
+   <RequiresRestart>false</RequiresRestart>
+   <Version>4.12</Version>
+   <PatchItemList>
+      <PatchItem identifier="1413270032873">
+         <Title>RP4.12</Title>
+         <ScriptFile>patch.xml</ScriptFile>
+      </PatchItem>
+   </PatchItemList>
+</Catalog>

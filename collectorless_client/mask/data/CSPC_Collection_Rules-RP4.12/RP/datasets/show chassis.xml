@@ -1,0 +1,56 @@
+<Dataset identifier="_show chassis">
+	<Title>show chassis</Title>
+	<Description>Mandatory,Chassis SN for CIMC; Added in RP3.15 for 10K</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_WebNS">
+			<CLI>
+				<Command>show chassis</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_WebNS_CSS115xx">
+			<CLI>
+				<Command>show chassis</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS">
+			<CLI>
+				<Command>show chassis</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS_1">
+			<CLI>
+				<Command>show chassis</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CIMC_Firmware">
+			<CLI>
+				<Command>show chassis</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CIMC_Firmware_1">
+			<CLI>
+				<Command>show chassis</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_WebNS_CSS115xx_730le">
+			<CLI>
+				<Command>show chassis</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_10000">
+			<CLI>
+				<Command>show chassis</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

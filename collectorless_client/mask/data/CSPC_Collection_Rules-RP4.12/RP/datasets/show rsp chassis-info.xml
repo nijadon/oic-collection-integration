@@ -1,0 +1,14 @@
+<Dataset identifier="_show rsp chassis_info">
+	<Title>show rsp chassis-info</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_7500">
+			<CLI>
+				<Command>show rsp chassis-info</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

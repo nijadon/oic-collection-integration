@@ -1,0 +1,15 @@
+<Dataset identifier="_show license right-to-use XE conditional">
+	<Title>show license right-to-use XE conditional</Title>
+	<Description>Optional,Conditional collection along with show license all;Changed in RP4.11</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Output</CategoryName>
+	<CategoryName>CLI-Performance</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XE_CA_Switches">
+			<CLI>
+				<Command>show license right-to-use</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

@@ -1,0 +1,14 @@
+<Dataset identifier="_show chassis eeprom">
+	<Title>show chassis eeprom</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_10000">
+			<CLI>
+				<Command>show chassis eeprom</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

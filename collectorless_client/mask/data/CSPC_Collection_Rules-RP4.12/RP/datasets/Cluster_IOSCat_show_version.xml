@@ -1,0 +1,46 @@
+<Dataset identifier="_Cluster_IOSCat_show_version">
+	<Title>rcommand show version</Title>
+	<Description>Optional,Conditionally collected from Cluster member</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Output</CategoryName>
+	<CreatedUser>admin</CreatedUser>
+	<Locked>false</Locked>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_Cat">
+			<CLI>
+				<Command>show version</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<SubMode>
+					<EntryCommandList>
+						<EntryCommand>
+							<MainEntryCommand>rcommand &lt;number&gt;</MainEntryCommand>
+						</EntryCommand>
+					</EntryCommandList>
+					<ExitCommandList>
+						<ExitCommand>
+							<MainExitCommand>exit</MainExitCommand>
+						</ExitCommand>
+					</ExitCommandList>
+				</SubMode>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_cat3700">
+			<CLI>
+				<Command>show version</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<SubMode>
+					<EntryCommandList>
+						<EntryCommand>
+							<MainEntryCommand>rcommand &lt;number&gt;</MainEntryCommand>
+						</EntryCommand>
+					</EntryCommandList>
+					<ExitCommandList>
+						<ExitCommand>
+							<MainExitCommand>exit</MainExitCommand>
+						</ExitCommand>
+					</ExitCommandList>
+				</SubMode>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

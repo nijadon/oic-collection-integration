@@ -1,0 +1,289 @@
+<Dataset identifier="_SNMP_STARTUP">
+	<Title>SNMP_STARTUP</Title>
+	<Description>Mandatory,Config Archive using SNMP read-write</Description>
+	<CategoryName>Configuration</CategoryName>
+	<TagName>Config</TagName>
+	<CollectionType>SNMP_CONFIG</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XE_VSS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XE_Cat4500E">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XE_CA_Switches">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_1K">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_MDS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_VDC">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_WebNS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IPS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_1">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_63ge_1">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_5000">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_Topspin_SFS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_ACNS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_ACNS_1">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NME_NAM">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_GSS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_UBR10K">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XE">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_7300">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_7200">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_7500">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_8500">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_10000">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_12000">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_as5300">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_cat3700">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_Cat">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_VSS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_LS1010">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XR">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XR_1">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NCS_IOS_XR">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_ACSW">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_SanOS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_WLC">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_SCOS_8000">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+		<VersionedDataset identifier="_SCOS">
+			<SNMPConfig>
+				<Command>START_UP</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</SNMPConfig>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

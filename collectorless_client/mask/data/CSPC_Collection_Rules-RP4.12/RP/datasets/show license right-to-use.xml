@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dataset identifier="_show license right-to-use">
+	<Title>show license right-to-use</Title>
+	<Description>Optional,Added in RP3.24</Description>
+	<CategoryName>CLI-Licensing</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XE_VSS">
+			<CLI>
+				<Command>show license right-to-use</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XE_Cat4500E">
+			<CLI>
+				<Command>show license right-to-use</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

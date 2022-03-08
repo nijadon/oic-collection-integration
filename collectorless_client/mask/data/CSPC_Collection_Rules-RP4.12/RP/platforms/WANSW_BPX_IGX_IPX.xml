@@ -1,0 +1,22 @@
+<Platform identifier="_WANSW_BPX_IGX_IPX">
+<Title>WANSW_BPX_IGX_IPX</Title>
+<Description>IGX, BPX, IPX Switches</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.232</Value>
+      <Value>.1.3.6.1.4.1.9.1.233</Value>
+      <Value>.1.3.6.1.4.1.9.1.234</Value>
+      <Value>.1.3.6.1.4.1.9.1.235</Value>
+      <Value>.1.3.6.1.4.1.9.1.237</Value>
+      <Value>.1.3.6.1.4.1.9.1.238</Value>
+      <Value>.1.3.6.1.4.1.9.1.239</Value>
+      <Value>.1.3.6.1.4.1.9.1.242</Value>
+      <Value>.1.3.6.1.4.1.9.1.243</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

@@ -1,0 +1,154 @@
+<Dataset identifier="_TP_Codecs_DYN_CISCO-TELEPRESENCE-MIB">
+  <Type>Dynamic</Type>
+  <Title>DL_TP Codecs DYN_CISCO-TELEPRESENCE-MIB</Title>
+  <CollectionType>SNMP</CollectionType>
+  <CollectionInterval>0</CollectionInterval><CategoryName>Telepresence</CategoryName>
+  <Statements>
+    <Loop identifier="loop1">
+      <Title>Get SNMP Interface Class</Title>
+      <VectorInput>
+        <SNMPTable>
+          <Input>
+          <Dataset>
+            <DatasetName Failure="error_message">_check_for_Secondary_Codecs</DatasetName>
+          </Dataset>
+        </Input>
+          <Rows>
+          </Rows>
+        </SNMPTable>
+      </VectorInput>
+      <Statements>
+        <Condition identifier="loop1_cond_last">
+          <Title>Save the ifIndex</Title>
+          <Input>
+          <SNMPValue>
+            <LoopContext></LoopContext>
+          </SNMPValue>
+        </Input>
+          <Operation>
+            <Matches ignoreCase="false">^(.*)$</Matches>
+          </Operation>
+          <Match>
+            <Assignment>
+              <Variable append="true" onlyIfNotNull="true" trim="true" vectorType="Set" operation="add">codecList</Variable>
+              <Values>
+                <Value>&lt;loop1_cond_last.1&gt;</Value></Values>
+            </Assignment>
+            <Continue></Continue>
+          </Match>
+          <NonMatch>
+            <Goto></Goto>
+          </NonMatch>
+        </Condition>
+      </Statements>
+    </Loop>
+    <Loop identifier="loop2">
+      <VectorInput>
+        <Variable unique = "true">
+          <VariableName>codecList</VariableName>
+        </Variable>
+      </VectorInput>
+      <Statements>
+        <Condition identifier="output_cond">
+          <Input>
+          <LoopContext></LoopContext>
+        </Input>
+          <Operation>
+            <Matches ignoreCase="false">.*CODEC.*ts2.*</Matches>
+          </Operation>
+          <Match>
+            <Assignment>
+              <Variable append="false" onlyIfNotNull="true" trim="true" vectorType="Set" operation="add">appendCodec</Variable>
+              <Values>
+                <Value>_cts2</Value></Values>
+            </Assignment>
+            <Output>
+              <Dataset>
+                <DatasetName>_CISCO-TELEPRESENCE-MIB</DatasetName>
+                <Variables>
+                  <Variable>appendCodec</Variable>
+                </Variables>
+                <TransportMutationList><TransportMutation><Parameter>CommunityString</Parameter><Operator>Append</Operator><Operand>&lt;appendCodec&gt;</Operand></TransportMutation></TransportMutationList></Dataset>
+            </Output>
+            <Goto></Goto>
+          </Match>
+          <NonMatch>
+            <Continue></Continue>
+          </NonMatch>
+        </Condition>
+      </Statements>
+    </Loop>
+    <Loop identifier="loop3">
+      <VectorInput>
+        <Variable unique = "true">
+          <VariableName>codecList</VariableName>
+        </Variable>
+      </VectorInput>
+      <Statements>
+        <Condition identifier="output_cond">
+          <Input>
+          <LoopContext></LoopContext>
+        </Input>
+          <Operation>
+            <Matches ignoreCase="false">.*CODEC.*ts3.*</Matches>
+          </Operation>
+          <Match>
+            <Assignment>
+              <Variable append="false" onlyIfNotNull="true" trim="true" vectorType="Set" operation="add">appendCodec</Variable>
+              <Values>
+                <Value>_cts3</Value></Values>
+            </Assignment>
+            <Output>
+              <Dataset>
+                <DatasetName>_CISCO-TELEPRESENCE-MIB</DatasetName>
+                <Variables>
+                  <Variable>appendCodec</Variable>
+                </Variables>
+                <TransportMutationList><TransportMutation><Parameter>CommunityString</Parameter><Operator>Append</Operator><Operand>&lt;appendCodec&gt;</Operand></TransportMutation></TransportMutationList></Dataset>
+            </Output>
+            <Goto></Goto>
+          </Match>
+          <NonMatch>
+            <Continue></Continue>
+          </NonMatch>
+        </Condition>
+      </Statements>
+    </Loop>
+    <Loop identifier="loop4">
+      <VectorInput>
+        <Variable unique = "true">
+          <VariableName>codecList</VariableName>
+        </Variable>
+      </VectorInput>
+      <Statements>
+        <Condition identifier="output_cond">
+          <Input>
+          <LoopContext></LoopContext>
+        </Input>
+          <Operation>
+            <Matches ignoreCase="false">.*CODEC.*ts4.*</Matches>
+          </Operation>
+          <Match>
+            <Assignment>
+              <Variable append="false" onlyIfNotNull="true" trim="true" vectorType="Set" operation="add">appendCodec</Variable>
+              <Values>
+                <Value>_cts4</Value></Values>
+            </Assignment>
+            <Output>
+              <Dataset>
+                <DatasetName>_CISCO-TELEPRESENCE-MIB</DatasetName>
+                <Variables>
+                  <Variable>appendCodec</Variable>
+                </Variables>
+                <TransportMutationList><TransportMutation><Parameter>CommunityString</Parameter><Operator>Append</Operator><Operand>&lt;appendCodec&gt;</Operand></TransportMutation></TransportMutationList></Dataset>
+            </Output>
+            <Goto></Goto>
+          </Match>
+          <NonMatch>
+            <Continue></Continue>
+          </NonMatch>
+        </Condition>
+      </Statements>
+    </Loop>    
+  </Statements>
+</Dataset>

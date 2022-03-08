@@ -1,0 +1,26 @@
+<Dataset identifier="_show rom-monitor">
+	<Title>show rom-monitor</Title>
+	<Description>Optional,Added in RP3.25</Description>
+	<CategoryName>CLI-Security</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS">
+			<CLI>
+				<Command>show rom-monitor</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_7300">
+			<CLI>
+				<Command>show rom-monitor</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_7200">
+			<CLI>
+				<Command>show rom-monitor</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

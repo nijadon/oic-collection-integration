@@ -1,0 +1,14 @@
+<Dataset identifier="_show mode">
+	<Title>show mode</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Design</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_PixOS">
+			<CLI>
+				<Command>show mode</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

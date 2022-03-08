@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IntegrityRule identifier="_CNC_GLOBAL_INTEG_RULE">
+	<Title>CSPC Global Integrity Rule</Title>
+	<Description/>
+	<CreatedUser>admin</CreatedUser>
+	<MatchType>ALL</MatchType>
+	<IntegrityConditionList>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^Command option not allowed in text configuration mode</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>% Invalid input detected at</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>% Ambiguous command:  "show vlan"</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>ERROR: % Invalid|Incorrect usage</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>% This command is not authorized</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^%\s*Incomplete</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^\s*Translating</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^Usage:</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^Ambiguous</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^Incomplete</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Unknown Command</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Incorrect privilege</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Node is unknown</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Other node is busy - try later</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Node is unreachable at this time</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Sorry, slot not available</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>slot not available</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>undefined symbol:</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>command can be executed in active state only</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>You can only run this command on active ASC card</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>ERR: command for active board only</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Enter Nodename to connect to:</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>\\n% Authorization failed</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Command authorization failed</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^%\s*This command is not authorized</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Authorization - Unauthorized NAS or PORT</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^Type help or '\?' for a list of available commands</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^Type Help or '\?' for a list of available commands</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>% Invalid input detected at '\^' marker</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>% Invalid [Cc]ommand at '\^' marker</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>No token match at '\^' marker.</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>^Incorrect command</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>% Invalid command</Expression>
+		</IntegrityCondition>
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>Syntax error: Illegal parameter</Expression>
+		</IntegrityCondition>
+		<!-- Added in RP4.10 US129942 (VIPTELA) -->
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>syntax error: </Expression>
+		</IntegrityCondition>
+		<!-- Added in RP4.12 US152296 -->
+		<IntegrityCondition>
+			<Operator>DOES_NOT_MATCH</Operator>
+			<Expression>% Permission denied for the role</Expression>
+		</IntegrityCondition>
+	</IntegrityConditionList>
+</IntegrityRule>

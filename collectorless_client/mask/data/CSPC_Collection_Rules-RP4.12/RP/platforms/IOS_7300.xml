@@ -1,0 +1,15 @@
+<Platform identifier="_IOS_7300">
+<Title>IOS_7300</Title>
+<Description>IOS 7300 Series Routers</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.439</Value>
+      <Value>.1.3.6.1.4.1.9.1.476</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

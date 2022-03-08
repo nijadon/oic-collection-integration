@@ -1,0 +1,44 @@
+<Platform identifier="_IOS_XR">
+<Title>IOS_XR</Title>
+<Description>IOS XR Routers</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.613</Value>
+      <Value>.1.3.6.1.4.1.9.1.643</Value>
+      <Value>.1.3.6.1.4.1.9.1.739</Value>
+      <Value>.1.3.6.1.4.1.9.1.822</Value>
+      <Value>.1.3.6.1.4.1.9.1.1017</Value>
+      <Value>.1.3.6.1.4.1.9.1.1018</Value>
+      <Value>.1.3.6.1.4.1.9.1.1036</Value>
+      <Value>.1.3.6.1.4.1.9.1.1037</Value>
+      <Value>.1.3.6.1.4.1.9.1.1331</Value>
+      <Value>.1.3.6.1.4.1.9.1.1639</Value>
+      <Value>.1.3.6.1.4.1.9.1.1640</Value>
+      <Value>.1.3.6.1.4.1.9.1.1658</Value>
+      <Value>.1.3.6.1.4.1.9.1.1709</Value>
+      <Value>.1.3.6.1.4.1.9.1.1762</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2390</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2428</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2430</Value>
+      <Value>.1.3.6.1.4.1.9.1.2571</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2572</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2658</Value>
+      <Value>.1.3.6.1.4.1.9.1.2735</Value>
+      <Value>.1.3.6.1.4.1.9.1.2741</Value>
+      <Value>.1.3.6.1.4.1.9.1.2742</Value>
+      <Value>.1.3.6.1.4.1.9.1.2853</Value>
+      <Value>.1.3.6.1.4.1.9.1.2855</Value>
+      <Value>.1.3.6.1.4.1.9.1.2856</Value>
+      <Value>.1.3.6.1.4.1.9.1.2866</Value>
+      <Value>.1.3.6.1.4.1.9.1.2867</Value>
+      <Value>.1.3.6.1.4.1.9.1.3009</Value>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.1853</Value>
+	  <Value>.1.3.6.1.4.1.9.12.3.1.3.2009</Value>
+      </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

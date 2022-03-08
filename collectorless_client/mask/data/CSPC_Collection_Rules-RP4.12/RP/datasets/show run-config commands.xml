@@ -1,0 +1,16 @@
+<Dataset identifier="_show run_config commands">
+	<Title>show run-config commands</Title>
+	<Description>Mandatory,WLC config of user commands</Description>
+	<CategoryName>Configuration</CategoryName>
+	<TagName>Config</TagName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_WLC">
+			<CLI>
+				<Command>show run-config commands</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

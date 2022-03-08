@@ -1,0 +1,22 @@
+<Dataset identifier="_admin show install committed">
+	<Title>admin show install committed</Title>
+	<Description>Mandatory,SMU Data; Added in RP3.24</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CreatedUser>administrator</CreatedUser>
+	<Locked>false</Locked>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_NCS_IOS_XR">
+			<CLI>
+				<Command>admin show install committed</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XRv">
+			<CLI>
+				<Command>admin show install committed</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

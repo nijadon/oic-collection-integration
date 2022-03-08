@@ -1,0 +1,14 @@
+<Dataset identifier="_show card_inventory">
+	<Title>show card-inventory</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_Topspin_SFS">
+			<CLI>
+				<Command>show card-inventory</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

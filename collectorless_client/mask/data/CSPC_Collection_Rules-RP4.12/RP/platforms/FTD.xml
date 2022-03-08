@@ -1,0 +1,21 @@
+<Platform identifier="_FTD">
+	<Title>FTD</Title>
+	<Description>Firepower Threat Defense</Description>
+	<MatchType>ANY</MatchType>
+	<PlatformConditionList>
+		<PlatformCondition>
+			<PropertyName>SNMP_SYS_DESCR</PropertyName>
+			<Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+			<ValueList>
+				<Value>Cisco Firepower Threat Defense.*</Value>
+			</ValueList>
+		</PlatformCondition>
+		<PlatformCondition>
+			<PropertyName>SNMP_SYS_DESCR</PropertyName>
+			<Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+			<ValueList>
+				<Value>Cisco FirePOWER Threat Defense.*</Value>
+			</ValueList>
+		</PlatformCondition>
+	</PlatformConditionList>
+</Platform>

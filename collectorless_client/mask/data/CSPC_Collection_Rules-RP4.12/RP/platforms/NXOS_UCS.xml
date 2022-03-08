@@ -1,0 +1,21 @@
+<Platform identifier="_NXOS_UCS">
+<Title>NXOS_UCS</Title>
+<Description>UCS Fabric Interconnects</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.1062</Value>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.1063</Value>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.1454</Value>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.1488</Value>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.1662</Value>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.1828</Value>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.899</Value>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.2340</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

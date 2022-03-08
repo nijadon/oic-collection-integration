@@ -1,0 +1,22 @@
+<Dataset identifier="_STRATACOM_MIB">
+	<Title>STRATACOM-MIB</Title>
+	<Description>Optional,Wan Switch SW Information</Description>
+	<CategoryName>SNMP</CategoryName>
+	<CollectionType>SNMP</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_WANSW_BPX_IGX_IPX">
+			<SNMP>
+				<SNMPRequest>
+					<RequestType>Scalar</RequestType>
+					<ObjectList>
+						<Object>
+							<Id>.1.3.6.1.4.1.351.100.4.4.1.18.0</Id>
+							<Title>shelfCnfgPrimSwRevision</Title>
+							<Type>Scalar</Type>
+						</Object>
+					</ObjectList>
+				</SNMPRequest>
+			</SNMP>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

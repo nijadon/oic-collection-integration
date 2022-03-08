@@ -1,0 +1,158 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "oic-collection-integration.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "oic-collection-integration.name" . }}
+    helm.sh/chart: {{ include "oic-collection-integration.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "oic-collection-integration.name" . }}
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "oic-collection-integration.name" . }}
+        app.kubernetes.io/instance: {{ .Release.Name }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: oic-collection-integration-sa
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: HTTPS_PROXY
+              valueFrom:
+                secretKeyRef:
+                  name: agent-gateway-proxy
+                  key: https_proxy
+            - name: HTTP_PROXY
+              valueFrom:
+                secretKeyRef:
+                  name: agent-gateway-proxy
+                  key: http_proxy
+            - name: NO_PROXY
+              valueFrom:
+                secretKeyRef:
+                  name: agent-gateway-proxy
+                  key: no_proxy
+            - name: ACCESS_TOKEN_URL
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: access_token_url
+            - name: CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: client_id
+            - name: CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: client_secret
+            - name: CCO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: cco_username
+            - name: CCO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: cco_password
+            - name: OIC_TOKEN_URL
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: oic_token_url
+            - name: GRANT_TYPE
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: grant_type
+            - name: Inventory_Service_Queue
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: inventory_service_queue
+            - name: Transport_Service_Queue
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: transport_service_queue
+            - name: DEST_BUCKET
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: dest_bucket
+            - name: OIC_CF_URL
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: oic_cf_url
+            - name: JWT_TOKEN_URL
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: jwt_token_url
+            - name: JWT_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: jwt_client_id
+            - name: JWT_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: sec-cxcollector-auth
+                  key: jwt_client_secret
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.http.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.service.http.port }}
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 2
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: {{ .Values.service.http.port }}
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            timeoutSeconds: 2
+            failureThreshold: 3
+          volumeMounts:
+            - mountPath: /myapp/environment.properties
+              name: {{ template "oic-collection-integration.fullname" . }}-environment
+              subPath: environment.properties   
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+    {{- with .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+{{ toYaml . | indent 8 }}
+    {{- end }}
+      volumes:
+      - name: {{ template "oic-collection-integration.fullname" . }}-environment
+        configMap:
+          name: {{ template "oic-collection-integration.fullname" . }}-environment-properties

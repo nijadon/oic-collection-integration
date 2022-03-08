@@ -1,0 +1,16 @@
+<Dataset identifier="show_vdc">
+	<Title>show vdc</Title>
+	<Description>Mandatory,VDC check for conditional collection</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Input</CategoryName>
+	<CreatedUser>admin</CreatedUser>
+	<Locked>false</Locked>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_NXOS_VDC">
+			<CLI>
+				<Command>show vdc</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

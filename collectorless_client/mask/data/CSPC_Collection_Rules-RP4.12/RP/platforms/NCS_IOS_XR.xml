@@ -1,0 +1,44 @@
+<Platform identifier="_NCS_IOS_XR">
+<Title>NCS_IOS_XR</Title>
+<Description>NCS Routers running IOS XR</Description>
+<MatchType>ALL</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.1851</Value>
+      <Value>.1.3.6.1.4.1.9.1.1939</Value>
+      <Value>.1.3.6.1.4.1.9.1.2253</Value>
+      <Value>.1.3.6.1.4.1.9.1.2317</Value>
+      <Value>.1.3.6.1.4.1.9.1.2318</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2347</Value>
+      <Value>.1.3.6.1.4.1.9.1.2349</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2350</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2351</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2400</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2401</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2411</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2412</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2413</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2423</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2429</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2432</Value>
+      <Value>.1.3.6.1.4.1.9.1.2570</Value>
+      <Value>.1.3.6.1.4.1.9.1.2740</Value>
+      <Value>.1.3.6.1.4.1.9.1.2743</Value>
+      <Value>.1.3.6.1.4.1.9.1.2744</Value>
+      <Value>.1.3.6.1.4.1.9.1.2787</Value>
+      <Value>.1.3.6.1.4.1.9.1.2805</Value>
+      <Value>.1.3.6.1.4.1.9.1.2843</Value>
+	</ValueList>
+  </PlatformCondition>
+		<PlatformCondition>
+			<PropertyName>SNMP_SYS_DESCR</PropertyName>
+			<Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+			<ValueList>
+				<Value><![CDATA[Cisco IOS XR Software.*]]></Value>
+			</ValueList>
+		</PlatformCondition>
+</PlatformConditionList>
+</Platform>

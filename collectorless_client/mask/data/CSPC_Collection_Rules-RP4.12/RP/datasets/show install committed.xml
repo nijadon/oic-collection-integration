@@ -1,0 +1,32 @@
+<Dataset identifier="_show install committed">
+	<Title>show install committed</Title>
+	<Description>Mandatory,SMU Data; Added in RP3.24</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_NXOS">
+			<CLI>
+				<Command>show install committed</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_VDC">
+			<CLI>
+				<Command>show install committed</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NCS_IOS_XR">
+			<CLI>
+				<Command>show install committed</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XRv">
+			<CLI>
+				<Command>show install committed</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

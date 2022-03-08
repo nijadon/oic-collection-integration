@@ -1,0 +1,26 @@
+<Dataset identifier="_show isis adjacency">
+	<Title>show isis adjacency</Title>
+	<Description>Mandatory,Added in RP3.25</Description>
+	<CategoryName>CLI-Topology</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_NXOS">
+			<CLI>
+				<Command>show isis adjacency</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_MDS">
+			<CLI>
+				<Command>show isis adjacency</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_VDC">
+			<CLI>
+				<Command>show isis adjacency</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

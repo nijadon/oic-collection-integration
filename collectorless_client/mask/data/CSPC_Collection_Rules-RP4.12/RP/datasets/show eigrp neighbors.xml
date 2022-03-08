@@ -1,0 +1,32 @@
+<Dataset identifier="_show eigrp neighbors">
+	<Title>show eigrp neighbors</Title>
+	<Description>Mandatory,Added in RP4.1</Description>
+	<CategoryName>CLI-Topology</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XR">
+			<CLI>
+				<Command>show eigrp neighbors</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XR_1">
+			<CLI>
+				<Command>show eigrp neighbors</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XRv">
+			<CLI>
+				<Command>show eigrp neighbors</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NCS_IOS_XR">
+			<CLI>
+				<Command>show eigrp neighbors</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

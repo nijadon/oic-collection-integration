@@ -1,0 +1,14 @@
+<Platform identifier="_APIC">
+<Title>APIC</Title>
+<Description>APIC</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.2238</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

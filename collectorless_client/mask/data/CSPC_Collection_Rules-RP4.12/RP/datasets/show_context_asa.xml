@@ -1,0 +1,28 @@
+<Dataset identifier="show_context_asa">
+	<Title>show context (system)</Title>
+	<Description>Mandatory,Context check for conditional collection</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Input</CategoryName>
+	<CreatedUser>admin</CreatedUser>
+	<Locked>false</Locked>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_PixOS">
+			<CLI>
+				  <Command>show context</Command>
+				  <IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				 <SubMode>
+					<EntryCommandList>
+					        <EntryCommand>
+						<MainEntryCommand>changeto system</MainEntryCommand>
+						</EntryCommand>
+					</EntryCommandList>
+					<ExitCommandList>
+						<ExitCommand>
+						<MainExitCommand>changeto context admin</MainExitCommand>
+						</ExitCommand>
+					</ExitCommandList>
+				</SubMode>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

@@ -1,0 +1,14 @@
+<Dataset identifier="_show system status">
+	<Title>show system status</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_VIPTELA">
+			<CLI>
+				<Command>show system status</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

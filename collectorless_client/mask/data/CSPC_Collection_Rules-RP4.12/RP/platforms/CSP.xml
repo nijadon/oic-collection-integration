@@ -1,0 +1,15 @@
+<Platform identifier="_CSP">
+<Title>CSP</Title>
+<Description>CSP2100</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.12.3.1.3.1831</Value>
+      <Value>.1.3.6.1.4.1.9.1.2397</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

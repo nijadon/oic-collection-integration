@@ -1,0 +1,20 @@
+<Dataset identifier="_show env all">
+	<Title>show env all</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Operational</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XE_CA_Switches">
+			<CLI>
+				<Command>show env all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_cat3700">
+			<CLI>
+				<Command>show env all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

@@ -1,0 +1,14 @@
+<Dataset identifier="_show idprom switch all">
+	<Title>show idprom switch all</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_VSS">
+			<CLI>
+				<Command>show idprom switch all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

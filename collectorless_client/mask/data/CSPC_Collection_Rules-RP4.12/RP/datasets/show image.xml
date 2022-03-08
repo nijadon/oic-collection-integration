@@ -1,0 +1,14 @@
+<Dataset identifier="_show image">
+	<Title>show image</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_CatOS_5000">
+			<CLI>
+				<Command>show image</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

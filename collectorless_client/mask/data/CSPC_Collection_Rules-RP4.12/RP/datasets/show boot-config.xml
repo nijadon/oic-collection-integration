@@ -1,0 +1,14 @@
+<Dataset identifier="_show boot_config">
+	<Title>show boot-config</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Operational</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_Topspin_SFS">
+			<CLI>
+				<Command>show boot-config</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

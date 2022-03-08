@@ -1,0 +1,142 @@
+<Dataset identifier="show_context_asa_run_dyn">
+          <Type>Dynamic</Type>
+          <Title>DL_show_context_asa_run_dyn</Title>
+          <CollectionType>CLI</CollectionType>
+          <CategoryName>Configuration</CategoryName>
+          <Statements>
+            <Loop identifier="_show_context_1">
+              <VectorInput>
+                <Block>
+                  <Input>
+                    <Dataset>
+                      <DatasetName Failure="error_message">show_context_asa</DatasetName>
+                    </Dataset>
+                  </Input>
+                  <Params>
+            		<Start ignoreCase="false">^Context\sName+\s+Class\s+Interfaces\s+URL|^Context\sName\s+Class\s+Interfaces\s+Mode\s+URL</Start>
+            		<End ignoreCase="false">^Total\s+active\s+Security\s+Contexts:\s+\d</End>
+                    <IOSConfigBlocks>false</IOSConfigBlocks>
+                  </Params>
+                </Block>
+              </VectorInput>
+              <Statements>
+                <Loop identifier="_show_context_1_1">
+                  <VectorInput>
+                    <Line>
+                      <Input>
+                        <LoopContext/>
+                      </Input>
+                      <Params>
+                        <Match ignoreCase="false">.*</Match>
+                      </Params>
+                    </Line>
+                  </VectorInput>
+                  <Statements>
+                    <Condition identifier="_show_context_1_2">
+                      <Input>
+                        <LoopContext/>
+                      </Input>
+                      <Operation>
+	                <Matches ignoreCase="false">^Context\sName+\s+Class\s+Interfaces\s+URL|^\s*[\\*]*(admin)\s+(\S+)\s+(\S*)\s+(\S+)|^Context\sName\s+Class\s+Interfaces\s+Mode\s+URL|^\s*[\\*]*(admin)\s+(\S+)\s+(\S*)\s+(\S*)\s+(\S+)</Matches>
+                      </Operation>
+                      <Match>
+                        <Continue></Continue>
+                      </Match>
+                      <NonMatch>
+                        <Goto></Goto>
+                      </NonMatch>
+                    </Condition>
+                    <Condition identifier="_show_context_1_3">
+                      <Input>
+                        <LoopContext/>
+                      </Input>
+                      <Operation>
+	                <Matches ignoreCase="false">^\s*[\\*]*(\S+)\s+(\S+)\s+(\S*)\s+(\S*)\s+(\S+)$</Matches>
+                      </Operation>
+                      <Match>
+                        <Assignment>
+                          <Variable append="true" onlyIfNotNull="true"
+                                    trim="true" vectorType="List"
+                                    operation="add">name</Variable>
+                          <Value>&lt;_show_context_1_3.1&gt;</Value>
+                        </Assignment>
+                        <Assignment>
+                          <Variable append="true" onlyIfNotNull="true"
+                                    trim="true" vectorType="List"
+                                    operation="add">class</Variable>
+                          <Value>&lt;_show_context_1_3.2&gt;</Value>
+                        </Assignment>
+                        <Assignment>
+                          <Variable append="true" onlyIfNotNull="true"
+                                    trim="true" vectorType="List"
+                                    operation="add">Int</Variable>
+                          <Value>&lt;_show_context_1_3.3&gt;</Value>
+                        </Assignment>
+                        <Assignment>
+                          <Variable append="false" onlyIfNotNull="true"
+                                    trim="true" vectorType="List"
+                                    operation="add">_show_context_1_3_matched</Variable>
+                          <Value>TRUE</Value>
+                        </Assignment>
+                        <Continue></Continue>
+                      </Match>
+                      <NonMatch>
+                        <Goto></Goto>
+                      </NonMatch>
+                    </Condition>
+                    <Condition identifier="_show_context_1_3_post">
+                      <Input>
+                        <Variable>_show_context_1_3_matched</Variable>
+                      </Input>
+                      <Operation>
+                        <Equals ignoreCase="false">TRUE</Equals>
+                      </Operation>
+                      <Match>
+                        <Goto></Goto>
+                      </Match>
+                      <NonMatch>
+                        <Continue></Continue>
+                      </NonMatch>
+                    </Condition>
+                  </Statements>
+                </Loop>
+              </Statements>
+            </Loop>
+            <Loop identifier="output_loop">
+              <VectorInput>
+                <Variable unique="true">
+                  <VariableName>name</VariableName>
+                </Variable>
+              </VectorInput>
+              <Statements>
+                <Condition identifier="output_cond">
+                  <Input>
+                    <LoopContext/>
+                  </Input>
+                  <Operation>
+                    <NotEquals ignoreCase="false"></NotEquals>
+                  </Operation>
+                  <Match>
+                    <Assignment>
+                      <Variable append="false" onlyIfNotNull="true" trim="true"
+                                vectorType="List" operation="add">name</Variable>
+                      <Value></Value>
+                    </Assignment>
+                    <Output>
+                      <Dataset>
+                        <DatasetName>show_context_asa_run</DatasetName>
+                        <Variables>
+                          <Variable>name</Variable>
+                        </Variables>
+                      </Dataset>
+                    </Output>
+                    <Continue></Continue>
+                  </Match>
+                  <NonMatch>
+                    <Continue></Continue>
+                  </NonMatch>
+                </Condition>
+              </Statements>
+            </Loop>
+          </Statements>
+        </Dataset>

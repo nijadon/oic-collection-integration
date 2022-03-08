@@ -1,0 +1,14 @@
+<Dataset identifier="_show context">
+	<Title>show context</Title>
+	<Description>Mandatory,Context check for conditional collection</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Input</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_ACSW">
+			<CLI>
+				<Command>show context</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

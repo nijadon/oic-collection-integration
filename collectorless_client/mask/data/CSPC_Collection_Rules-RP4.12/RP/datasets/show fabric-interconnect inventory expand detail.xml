@@ -1,0 +1,26 @@
+<Dataset identifier="_show fabric_interconnect inventory expand detail">
+	<Title>show fabric-interconnect inventory expand detail</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_FXOS">
+			<CLI>
+				<Command>show fabric-interconnect inventory expand detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS">
+			<CLI>
+				<Command>show fabric-interconnect inventory expand detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS_1">
+			<CLI>
+				<Command>show fabric-interconnect inventory expand detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

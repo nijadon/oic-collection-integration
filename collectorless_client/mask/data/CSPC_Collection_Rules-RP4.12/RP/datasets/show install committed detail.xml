@@ -1,0 +1,20 @@
+<Dataset identifier="_show install committed detail">
+	<Title>show install committed detail</Title>
+	<Description>Optional,SMU Data</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XR">
+			<CLI>
+				<Command>show install committed detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XR_1">
+			<CLI>
+				<Command>show install committed detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

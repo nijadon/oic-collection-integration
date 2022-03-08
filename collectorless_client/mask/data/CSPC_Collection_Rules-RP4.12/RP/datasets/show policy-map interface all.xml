@@ -1,0 +1,38 @@
+<Dataset identifier="_show policy-map interface all">
+	<Title>show policy-map interface all</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Design</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XR">
+			<CLI>
+				<Command>show policy-map interface all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XR_8000">
+			<CLI>
+				<Command>show policy-map interface all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XR_1">
+			<CLI>
+				<Command>show policy-map interface all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XRv">
+			<CLI>
+				<Command>show policy-map interface all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NCS_IOS_XR">
+			<CLI>
+				<Command>show policy-map interface all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

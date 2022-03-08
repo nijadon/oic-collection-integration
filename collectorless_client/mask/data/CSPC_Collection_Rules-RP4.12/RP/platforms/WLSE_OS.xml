@@ -1,0 +1,18 @@
+<Platform identifier="_WLSE_OS">
+<Title>WLSE_OS</Title>
+<Description>Wireless Lan Solution Engine</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.459</Value>
+      <Value>.1.3.6.1.4.1.9.1.630</Value>
+      <Value>.1.3.6.1.4.1.9.1.631</Value>
+      <Value>.1.3.6.1.4.1.9.1.712</Value>
+      <Value>.1.3.6.1.4.1.9.1.752</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

@@ -1,0 +1,9 @@
+<Request xmlns="http://www.parinetworks.com/api/schemas/1.1" requestId="44446">
+	<Manage>
+		<Delete operationId="1" forceIfLocked="true">
+			<CollectionProfileList>
+				<CollectionProfile identifier="_sntc1x_min_dpacp" />
+			</CollectionProfileList>
+		</Delete>
+	</Manage>
+</Request>

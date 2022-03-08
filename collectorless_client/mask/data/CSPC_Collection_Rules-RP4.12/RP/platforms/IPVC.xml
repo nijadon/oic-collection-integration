@@ -1,0 +1,14 @@
+<Platform identifier="_IPVC">
+<Title>IPVC</Title>
+<Description>Unified VideoConferencing 3500 Series</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.903.100.2.3.1</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="main">
+	<target name="pre">
+		<if>
+			<equals arg1="${CSPC_VERSION}" arg2="2.4"/>
+			<then>
+				<echo message="Base version is 2.4. Proceeding with patch installation..."/>
+			</then>
+			<else>
+				<if>
+					<equals arg1="${CSPC_VERSION}" arg2="2.5"/>
+					<then>
+						<echo message="Base version is 2.5. Proceeding with patch installation..."/>
+					</then>
+					<else>
+						<if>
+							<equals arg1="${CSPC_VERSION}" arg2="2.6"/>
+							<then>
+								<echo message="Base version is 2.6. Proceeding with patch installation..."/>
+							</then>
+							<else>
+								<fail message="Base version is not 2.4, 2.5 or 2.6. Reason could be that CSPC server is not fully up and running due to previous patch installation just got over. If this is the case as said, then please wait for 10 minutes before attempting to install this patch. If this problem persists, then contact CSPC support."/>
+							</else>
+						</if>
+					</else>
+				</if>
+			</else>
+		</if>
+	</target>
+	<target name="checkos">
+		<condition property="isWindows" value="true">
+			<os family="windows"/>
+		</condition>
+		<condition property="isLinux" value="true">
+			<os family="unix"/>
+		</condition>
+	</target>
+	<target name="copy">
+		<copy failonerror="true" todir="${APP_HOME}/bin">
+			<fileset dir="./install/RP"/>
+		</copy>
+		<exec executable="chown" os="Linux">
+			<arg line="-R casuser:casusers  ${APP_HOME}/bin"/>
+		</exec>
+		<exec executable="chmod" os="Linux">
+			<arg line="-R 700  ${APP_HOME}/bin/"/>
+		</exec>
+	</target>
+	<target name="importRules">
+		<API>
+			<fileset dir="./install/xmlapis/platform/"/>
+		</API>
+		<API>
+			<fileset dir="./install/xmlapis/masking/"/>
+		</API>
+		<API>
+			<fileset dir="./install/xmlapis/integrity/"/>
+		</API>
+		<API>
+			<fileset dir="./install/xmlapis/datasets/"/>
+		</API>
+		<API>
+			<fileset dir="./install/xmlapis/collection_profiles/"/>
+		</API>
+		<API>
+			<fileset dir="./install/xmlapis/Delete_CPs/"/>
+		</API>
+		<API>
+			<fileset dir="./install/xmlapis/Delete_Datasets/"/>
+		</API>
+		<API>
+			<fileset dir="./install/xmlapis/Delete_Platforms/"/>
+		</API>
+		<echo message="Import Rules Task Completed"/>
+	</target>
+	<macrodef name="stopServerMacro">
+		<sequential>
+			<echo>Stopping CSPC server</echo>
+			<StopServer ignoreerrors="true"/>
+			<echo>CSPC server stopped</echo>
+		</sequential>
+	</macrodef>
+	<macrodef name="stopTomcatServiceMacro">
+		<sequential>
+			<exec executable="net" spawn="true">
+				<arg line="stop CSPCTomcatService"/>
+			</exec>
+			<sleep seconds="60"/>
+		</sequential>
+	</macrodef>
+	<macrodef name="startTomcatServiceMacro">
+		<sequential>
+			<exec executable="net" spawn="true">
+				<arg line="start CSPCTomcatService"/>
+			</exec>
+			<sleep seconds="60"/>
+		</sequential>
+	</macrodef>
+	<macrodef name="startServerMacro">
+		<sequential>
+			<echo>Starting CSPC server</echo>
+			<StartServer ignoreerrors="true"/>
+			<waitfor checkevery="10" checkeveryunit="second" maxwait="30" maxwaitunit="minute" timeoutproperty="cspc.start.timeout">
+				<socket port="42606" server="localhost"/>
+			</waitfor>
+			<fail message="CSPC Server not up">
+				<condition>
+					<isset property="cspc.start.timeout"/>
+				</condition>
+			</fail>
+			<echo>CSPC server started</echo>
+		</sequential>
+	</macrodef>
+	<target name="stopCSPC">
+		<stopServerMacro/>
+	</target>
+	<target name="startCSPC">
+		<startServerMacro/>
+	</target>
+	<target name="stopCSPCAgain">
+		<stopServerMacro/>
+	</target>
+	<target name="startCSPCAgain">
+		<startServerMacro/>
+	</target>
+	<target depends="checkos" if="isWindows" name="stopTomcatService">
+		<stopTomcatServiceMacro/>
+	</target>
+	<target depends="checkos" if="isWindows" name="startTomcatService">
+		<startTomcatServiceMacro/>
+	</target>
+	<target depends="checkos" if="isWindows" name="stopTomcatServiceAgain">
+		<stopTomcatServiceMacro/>
+	</target>
+	<target depends="checkos" if="isWindows" name="startTomcatServiceAgain">
+		<startTomcatServiceMacro/>
+	</target>
+	<target depends="pre, checkos, stopCSPC, stopTomcatService,copy,startCSPC,startTomcatService,importRules,stopCSPCAgain,stopTomcatServiceAgain, startCSPCAgain, startTomcatServiceAgain" name="main">
+		<!-- The smaller target is for testing only.  Use the one with restarts for production releases
+	    <target depends="checkos, copy, importRules" name="main">
+		-->
+		<echo message="Check patch.log in RP directory under ${APP_HOME}/ppm/patches for any errors."/>
+	</target>
+</project>

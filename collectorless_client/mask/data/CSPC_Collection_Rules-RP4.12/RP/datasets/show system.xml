@@ -1,0 +1,20 @@
+<Dataset identifier="_show system">
+	<Title>show system</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Operational</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_NXOS_UCS">
+			<CLI>
+				<Command>show system</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS_1">
+			<CLI>
+				<Command>show system</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

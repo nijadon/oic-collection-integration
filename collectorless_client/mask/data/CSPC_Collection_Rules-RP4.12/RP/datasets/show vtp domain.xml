@@ -1,0 +1,32 @@
+<Dataset identifier="_show vtp domain">
+	<Title>show vtp domain</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Design</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_CatOS">
+			<CLI>
+				<Command>show vtp domain</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_1">
+			<CLI>
+				<Command>show vtp domain</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_63ge_1">
+			<CLI>
+				<Command>show vtp domain</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_5000">
+			<CLI>
+				<Command>show vtp domain</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

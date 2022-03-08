@@ -1,0 +1,32 @@
+<Dataset identifier="_show test">
+	<Title>show test</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Performance</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_CatOS">
+			<CLI>
+				<Command>show test</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_1">
+			<CLI>
+				<Command>show test</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_63ge_1">
+			<CLI>
+				<Command>show test</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_5000">
+			<CLI>
+				<Command>show test</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

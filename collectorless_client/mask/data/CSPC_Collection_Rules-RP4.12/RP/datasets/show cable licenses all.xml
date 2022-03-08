@@ -1,0 +1,14 @@
+<Dataset identifier="_show cable licenses all">
+	<Title>show cable licenses all</Title>
+	<Description>Optional,Added in RP3.17</Description>
+	<CategoryName>CLI-Licensing</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_UBR10K">
+			<CLI>
+				<Command>show cable licenses all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

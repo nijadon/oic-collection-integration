@@ -1,0 +1,14 @@
+<Dataset identifier="_show pxf cpu stat ip">
+	<Title>show pxf cpu stat ip</Title>
+	<Description>Optional,Added in RP3.15</Description>
+	<CategoryName>CLI-Performance</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_10000">
+			<CLI>
+				<Command>show pxf cpu stat ip</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

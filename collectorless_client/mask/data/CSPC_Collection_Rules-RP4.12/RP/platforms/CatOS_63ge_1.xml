@@ -1,0 +1,30 @@
+<Platform identifier="_CatOS_63ge_1">
+  <Title>CatOS_63ge_1</Title>
+  <Description>CatOS Switches running 6.3 or later</Description>
+  <Locked>false</Locked>
+  <MatchType>ALL</MatchType>
+  <PlatformConditionList>
+    <PlatformCondition>
+      <PropertyName>SNMP_OID</PropertyName>
+      <Operator>IN_LIST</Operator>
+      <ValueList>
+        <Value>.1.3.6.1.4.1.9.5.38</Value>
+        <Value>.1.3.6.1.4.1.9.5.39</Value>
+        <Value>.1.3.6.1.4.1.9.5.44</Value>
+        <Value>.1.3.6.1.4.1.9.5.45</Value>
+        <Value>.1.3.6.1.4.1.9.5.47</Value>
+        <Value>.1.3.6.1.4.1.9.5.50</Value>
+        <Value>.1.3.6.1.4.1.9.5.56</Value>
+        <Value>.1.3.6.1.4.1.9.5.61</Value>
+        <Value>.1.3.6.1.4.1.9.5.64</Value>
+      </ValueList>
+    </PlatformCondition>
+    <PlatformCondition>
+      <PropertyName>SNMP_SYS_DESCR</PropertyName>
+      <Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+      <ValueList>
+        <Value>6[.][3456789]|[789][.]</Value>
+      </ValueList>
+    </PlatformCondition>
+  </PlatformConditionList>
+</Platform>

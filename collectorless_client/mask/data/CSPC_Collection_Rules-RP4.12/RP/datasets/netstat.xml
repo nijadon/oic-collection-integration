@@ -1,0 +1,14 @@
+<Dataset identifier="_netstat">
+	<Title>netstat -an</Title>
+	<Description>Optional,Added in RP4.1</Description>
+	<CategoryName>CLI-Security</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_NXOS_ACI">
+			<CLI>
+				<Command>netstat -an</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

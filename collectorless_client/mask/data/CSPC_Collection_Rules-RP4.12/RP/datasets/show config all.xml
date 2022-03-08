@@ -1,0 +1,44 @@
+<Dataset identifier="_show config all">
+	<Title>show config all</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>Configuration</CategoryName>
+	<TagName>Config</TagName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_CatOS">
+			<CLI>
+				<Command>show config all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_1">
+			<CLI>
+				<Command>show config all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_63ge_1">
+			<CLI>
+				<Command>show config all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CatOS_5000">
+			<CLI>
+				<Command>show config all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CTS">
+			<CLI>
+				<Command>show config all</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

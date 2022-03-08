@@ -1,0 +1,35 @@
+<Platform identifier="_FXOS">
+	<Title>FXOS</Title>
+	<Description>Firepower Appliances</Description>
+	<MatchType>ANY</MatchType>
+	<PlatformConditionList>
+		<PlatformCondition>
+			<PropertyName>SNMP_OID</PropertyName>
+			<Operator>IN_LIST</Operator>
+			<ValueList>
+				<Value>.1.3.6.1.4.1.9.1.2285</Value>
+				<Value>.1.3.6.1.4.1.9.1.2292</Value>
+				<Value>.1.3.6.1.4.1.9.1.2293</Value>
+				<Value>.1.3.6.1.4.1.9.1.2294</Value>
+				<Value>.1.3.6.1.4.1.9.1.2295</Value>
+				<Value>.1.3.6.1.4.1.9.1.2777</Value>
+				<Value>.1.3.6.1.4.1.9.1.2778</Value>
+				<Value>.1.3.6.1.4.1.9.1.2779</Value>
+			</ValueList>
+		</PlatformCondition>
+		<PlatformCondition>
+			<PropertyName>SNMP_SYS_DESCR</PropertyName>
+			<Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+			<ValueList>
+				<Value>Cisco Firepower .* Security Appliance.*</Value>
+			</ValueList>
+		</PlatformCondition>
+		<PlatformCondition>
+			<PropertyName>SNMP_SYS_DESCR</PropertyName>
+			<Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+			<ValueList>
+				<Value>Cisco FirePOWER .* Security Appliance.*</Value>
+			</ValueList>
+		</PlatformCondition>
+	</PlatformConditionList>
+</Platform>

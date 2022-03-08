@@ -1,0 +1,14 @@
+<Platform identifier="_WANSW MGX 8220">
+<Title>WANSW MGX 8220</Title>
+<Description>MGX 8220</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.351.110</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

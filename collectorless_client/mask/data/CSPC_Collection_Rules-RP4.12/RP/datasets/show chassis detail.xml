@@ -1,0 +1,38 @@
+<Dataset identifier="_show chassis detail">
+	<Title>show chassis detail</Title>
+	<Description>Mandatory,Chassis SN for CIMC</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_FXOS">
+			<CLI>
+				<Command>show chassis detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS">
+			<CLI>
+				<Command>show chassis detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS_1">
+			<CLI>
+				<Command>show chassis detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CIMC_Firmware">
+			<CLI>
+				<Command>show chassis detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_CIMC_Firmware_1">
+			<CLI>
+				<Command>show chassis detail</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

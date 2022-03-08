@@ -1,0 +1,14 @@
+<Dataset identifier="_show memory XE conditional">
+	<Title>show memory XE conditional</Title>
+	<Description>Optional,Conditional collection along with show memory statistics;Changed in RP4.11</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Output</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XE_CA_Switches">
+			<CLI>
+				<Command>show memory</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

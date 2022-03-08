@@ -1,0 +1,14 @@
+<Dataset identifier="_show gslb_config">
+	<Title>show gslb-config</Title>
+	<Description>Optional</Description>
+	<CategoryName>CLI-Design</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_GSS">
+			<CLI>
+				<Command>show gslb-config</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

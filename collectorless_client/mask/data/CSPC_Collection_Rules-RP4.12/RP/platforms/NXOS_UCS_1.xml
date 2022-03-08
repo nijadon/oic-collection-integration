@@ -1,0 +1,22 @@
+<Platform identifier="_NXOS_UCS_1">
+  <Title>NXOS_UCS_1</Title>
+  <Description>UCS Fabric Interconnects using same OID as some C-Series</Description>
+  <Locked>false</Locked>
+  <MatchType>ALL</MatchType>
+  <PlatformConditionList>
+    <PlatformCondition>
+      <PropertyName>SNMP_OID</PropertyName>
+      <Operator>IN_LIST</Operator>
+      <ValueList>
+        <Value>.1.3.6.1.4.1.9.12.3.1.3.847</Value>
+      </ValueList>
+    </PlatformCondition>
+    <PlatformCondition>
+      <PropertyName>SNMP_SYS_DESCR</PropertyName>
+      <Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+      <ValueList>
+        <Value>.*Cisco NX-OS.*</Value>
+      </ValueList>
+    </PlatformCondition>
+  </PlatformConditionList>
+</Platform>

@@ -1,0 +1,30 @@
+<Dataset identifier="show_context_start">
+	<Title>context show startup-config (ACE)</Title>
+	<Description>Mandatory,ACE Context Configuration</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Output</CategoryName>
+	<CreatedUser>admin</CreatedUser>
+	<TagName>Config</TagName>
+	<Locked>false</Locked>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_ACSW">
+			<CLI>
+				<Command>show startup-config</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+				<SubMode>
+					<EntryCommandList>
+						<EntryCommand>
+							<MainEntryCommand>changeto &lt;name&gt;</MainEntryCommand>
+						</EntryCommand>
+					</EntryCommandList>
+					<ExitCommandList>
+						<ExitCommand>
+							<MainExitCommand>changeto Admin</MainExitCommand>
+						</ExitCommand>
+					</ExitCommandList>
+				</SubMode>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

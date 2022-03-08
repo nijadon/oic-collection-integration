@@ -1,0 +1,14 @@
+<Dataset identifier="_show redundancy peer-system statistics">
+	<Title>show redundancy peer-system statistics</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_WLC">
+			<CLI>
+				<Command>show redundancy peer-system statistics</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

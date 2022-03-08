@@ -1,0 +1,46 @@
+<Dataset identifier="_DL_OSPF_Neighbor_CLI">
+	<Type>Dynamic</Type>
+	<Title>DL_OSPF_Neighbor_CLI</Title>
+	<CollectionType>CLI</CollectionType>
+	<CategoryName>CLI-Topology</CategoryName>
+	<Description>Mandatory,Conditional Collection of CLI based on MIB Check;Added in RP3.22</Description>
+	<Statements>
+		<Loop identifier="loop1">
+			<Title>Check if OSPF is enabled</Title>
+			<VectorInput>
+				<SNMPTable>
+					<Input>
+						<Dataset>
+							<DatasetName Failure="error_message">_DI_OSPF_MIB_check</DatasetName>
+						</Dataset>
+					</Input>
+					<Rows/>
+				</SNMPTable>
+			</VectorInput>
+			<Statements>
+				<Condition identifier="Output">
+					<Title>Output</Title>
+					<Input>
+						<SNMPValue>
+							<LoopContext/>
+						</SNMPValue>
+					</Input>
+					<Operation>
+						<Matches ignoreCase="false">[.]</Matches>
+					</Operation>
+					<Match>
+						<Output>
+							<Dataset>
+								<DatasetName>_DO_OSPF_Neighbor_CLI</DatasetName>
+							</Dataset>
+						</Output>
+						<Goto/>
+					</Match>
+					<NonMatch>
+						<Continue/>
+					</NonMatch>
+				</Condition>
+			</Statements>
+		</Loop>
+	</Statements>
+</Dataset>

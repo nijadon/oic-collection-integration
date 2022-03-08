@@ -1,0 +1,18 @@
+<Platform identifier="_WANSW_MGX_8850_PXM1E_PXM45_8950">
+<Title>WANSW_MGX_8850_PXM1E_PXM45_8950</Title>
+<Description>MGX 8850 8950 with PXM1E or PXM45</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.228</Value>
+      <Value>.1.3.6.1.4.1.9.1.315</Value>
+      <Value>.1.3.6.1.4.1.9.1.435</Value>
+      <Value>.1.3.6.1.4.1.9.1.608</Value>
+      <Value>.1.3.6.1.4.1.9.1.609</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

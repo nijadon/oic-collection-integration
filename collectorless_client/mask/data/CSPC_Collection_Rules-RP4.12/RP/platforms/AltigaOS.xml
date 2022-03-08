@@ -1,0 +1,16 @@
+<Platform identifier="_AltigaOS">
+<Title>AltigaOS</Title>
+<Description>VPN3000</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.3076.1.2.1.1.1.2</Value>
+      <Value>.1.3.6.1.4.1.3076.1.2.1.1.2.1</Value>
+      <Value>.1.3.6.1.4.1.3076.1.2.1.1.3.1</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

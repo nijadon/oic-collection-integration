@@ -1,0 +1,68 @@
+<Dataset identifier="_device_query">
+	<Title>device_query</Title>
+	<Description>Mandatory,Codian Inventory (Serial Number)</Description>
+	<CategoryName>HTTP</CategoryName>
+	<Locked>false</Locked>
+	<CollectionType>HTTP</CollectionType>
+	<CollectionInterval>10</CollectionInterval>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_TP_Conductor">
+			<HTTP>
+				<URL>/RPC2</URL>
+				<HttpRequest>&lt;?xml version="1.0"?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;device.query&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;
+&lt;struct&gt;
+&lt;member&gt;
+&lt;name&gt;authenticationUser&lt;/name&gt;
+&lt;value&gt;
+&lt;string&gt;authenticationUserValue&lt;/string&gt;
+&lt;/value&gt;
+&lt;/member&gt;
+&lt;member&gt;
+&lt;name&gt;authenticationPassword&lt;/name&gt;
+&lt;value&gt;
+&lt;string&gt;authenticationPasswordValue&lt;/string&gt;
+&lt;/value&gt;
+&lt;/member&gt;
+&lt;/struct&gt;
+&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</HttpRequest>
+			</HTTP>
+		</VersionedDataset>
+		<VersionedDataset identifier="_TP_Codian">
+			<HTTP>
+				<URL>/RPC2</URL>
+				<HttpRequest>&lt;?xml version="1.0"?&gt;
+&lt;methodCall&gt;
+&lt;methodName&gt;device.query&lt;/methodName&gt;
+&lt;params&gt;
+&lt;param&gt;
+&lt;value&gt;
+&lt;struct&gt;
+&lt;member&gt;
+&lt;name&gt;authenticationUser&lt;/name&gt;
+&lt;value&gt;
+&lt;string&gt;authenticationUserValue&lt;/string&gt;
+&lt;/value&gt;
+&lt;/member&gt;
+&lt;member&gt;
+&lt;name&gt;authenticationPassword&lt;/name&gt;
+&lt;value&gt;
+&lt;string&gt;authenticationPasswordValue&lt;/string&gt;
+&lt;/value&gt;
+&lt;/member&gt;
+&lt;/struct&gt;
+&lt;/value&gt;
+&lt;/param&gt;
+&lt;/params&gt;
+&lt;/methodCall&gt;</HttpRequest>
+			</HTTP>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

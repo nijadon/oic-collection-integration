@@ -1,0 +1,225 @@
+version: 2 
+jobs: # A basic unit of work in a run
+  build: # runs not using Workflows must have a `build` job as entry point
+    # directory where steps are run
+    docker: # run the steps with Docker
+      # CircleCI Python images available at: https://hub.docker.com/r/circleci/python/
+      - image: circleci/python:3.6.4
+
+    working_directory: ~/repo
+        
+    steps: # steps that comprise the `build` job
+      - checkout # check out source code to working directory
+
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r requirements.txt
+    
+
+  Push_To_ECR:
+    docker:
+      - image: circleci/python:3-stretch-browsers
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+#### This step will restore the cache having version information  ####
+      - restore_cache:
+          keys: 
+            - my-cache-v2-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+            - my-cache-v2-{{ arch }}-{{ .Branch }}
+            - my-cache-v2     
+      - run:
+          name: Install AWS CLI
+          command: |
+            sudo apt-get update && sudo apt-get install -y python-setuptools python python-pip
+            sudo pip install awscli
+      - run:
+          name: Configure cli credentials
+          command: |
+            aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile default
+            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile default
+      - run:
+          name: Configure default region
+          command: |
+            aws configure set region ${AWS_DEFAULT_REGION} --profile default
+      - setup_remote_docker
+      - run:
+          name: Log into Amazon ECR
+          command: $(aws ecr get-login --no-include-email --region ${AWS_DEFAULT_REGION} )
+## This steps does the symentic versioning of the docker image,every merge to master increment the patch version by(X.Y.Z++) ##          
+      - run:
+          name: read version
+          command: |  
+            if [  "${CIRCLE_BRANCH}" == "master" ];  
+            then  
+              docker create -v /cfg --name configs ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/image-versioning:latest /bin/true
+              if [ -f "/home/circleci/project/version_file.txt" ]; 
+              then
+                echo "$FILE exist"
+                docker cp /home/circleci/project/version_file.txt configs:/cfg
+              fi  
+              docker run -e IMAGE_VERSION=${IMAGE_VERSION} --volumes-from configs ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/image-versioning:latest
+              docker cp configs:/cfg/version_file.txt  /home/circleci/project/version_file.txt
+            else
+              echo "skipping the version update"   
+            fi     
+## Step to build docker image ##             
+      - run:
+          name: Build server docker image
+          command: |
+            if [ -f "/home/circleci/project/version_file.txt" ]; 
+            then
+              echo "file exists"
+              export IMAGE_TAG=$( cat /home/circleci/project/version_file.txt )
+            fi       
+            if [  "${CIRCLE_BRANCH}" == "master" ];
+            then
+              export IMAGE_TAG=$( cat /home/circleci/project/version_file.txt )
+              docker build -t ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CIRCLE_PROJECT_REPONAME}:${IMAGE_TAG} .        
+            else
+              export SHORT_GIT_SHA=$(git rev-parse --short ${CIRCLE_SHA1})
+              echo $SHORT_GIT_SHA
+              docker build -t ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CIRCLE_PROJECT_REPONAME}:${IMAGE_VERSION}-${SHORT_GIT_SHA} .
+            fi
+
+## Step to push docker image to ECR ##                         
+      - run:
+          name: Push server image to Amazon ECR -US
+          command: |
+            if [ -f "/home/circleci/project/version_file.txt" ]; 
+            then
+              echo "file exists"
+              export IMAGE_TAG=$( cat /home/circleci/project/version_file.txt )
+            fi
+            if [  "${CIRCLE_BRANCH}" == "master" ];
+            then
+              export IMAGE_TAG=$( cat /home/circleci/project/version_file.txt )
+              docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CIRCLE_PROJECT_REPONAME}:${IMAGE_TAG}
+            else  
+              export SHORT_GIT_SHA=$(git rev-parse --short ${CIRCLE_SHA1})
+              echo $SHORT_GIT_SHA
+              docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${CIRCLE_PROJECT_REPONAME}:${IMAGE_VERSION}-${SHORT_GIT_SHA}
+            fi                  
+              
+#### This step saves the updated version for any merge to master ####            
+           
+      - save_cache: 
+          key: my-cache-v2-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - version_file.txt  
+  Push_Helm_Chart:
+    docker:
+      - image: circleci/python:3-stretch-browsers
+    steps:    
+      - checkout
+      #### This step will restore the cache having version information  ####          
+      - restore_cache:
+          keys: 
+            - helm-cache-v1-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+            - helm-cache-v1-{{ arch }}-{{ .Branch }}
+            - helm-cache-v1
+      - run:
+          name: Install AWS CLI
+          command: |
+            sudo apt-get update && sudo apt-get install -y python-setuptools python python-pip
+            sudo pip install awscli
+
+      - setup_remote_docker
+      - run:
+          name: Log into Amazon ECR
+          command: $(aws ecr get-login --no-include-email --region ${AWS_DEFAULT_REGION} )
+      - run:
+          name: read helm chart version
+          command: | 
+            modifiedfiles=$(git show --first-parent HEAD --name-only --pretty="" | cut -d'/' -f 1  2>&1)
+            echo $modifiedfiles
+            if [[ $modifiedfiles = *"deploy"* ]];
+            then
+              mkdir -p /home/circleci/project/helm  
+              docker create --rm -v /cfg --name configs ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/image-versioning:latest /bin/true
+              if [ -f "/home/circleci/project/helm/version_file.txt" ]; 
+              then
+                echo "$FILE exist"
+                docker cp /home/circleci/project/helm/version_file.txt configs:/cfg
+              fi  
+              docker run --rm -e IMAGE_VERSION=${IMAGE_VERSION} --volumes-from configs ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/image-versioning:latest
+              if [[ "${CIRCLE_BRANCH}" == *"master"* ]];
+              then               
+                docker cp configs:/cfg/version_file.txt  /home/circleci/project/helm/version_file.txt 
+              fi  
+            else
+              echo "no helm chart file modified skipping reading the version"   
+              exit 0;
+            fi       
+      - run:
+          name: helm-push
+          command: | 
+              export SHORT_GIT_SHA=$(git rev-parse --short ${CIRCLE_SHA1})
+              if [ -f "/home/circleci/project/helm/version_file.txt" ]; 
+              then
+                echo "file exists"
+                export PACKAGE_VERSION=$( cat /home/circleci/project/helm/version_file.txt )
+                echo $PACKAGE_VERSION
+              fi  
+              modifiedfiles=$(git show --first-parent HEAD --name-only --pretty="" | cut -d'/' -f 1  2>&1)
+              if [[ $modifiedfiles = *"deploy"* ]];
+              then
+                folder=$(git show --first-parent HEAD --name-only --pretty="" | cut -d'/' -f 3  2>&1)
+                echo $folder
+                docker create  -v /cfg --name helm-dir ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/cci-helm-plugin:latest /bin/true
+                export PACKAGE_DIR=deploy
+                docker cp -a /home/circleci/project/${PACKAGE_DIR}/  helm-dir:/cfg                
+                
+                export HELM_PACKAGE_PATH=deploy/charts/oic-collection-integration
+                echo "modified folder :oic-collection-integration"
+                docker run --rm -e IMAGE_VERSION=${IMAGE_VERSION} -e HELM_REPO_URL=${HELM_REPO_URL} -e AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} -e AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} -e AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION} -e HELM_PACKAGE_PATH=${HELM_PACKAGE_PATH} -e GIT_SHA=${SHORT_GIT_SHA} -e GIT_BRANCH=${CIRCLE_BRANCH} -e PACKAGE_VERSION=${PACKAGE_VERSION} --volumes-from helm-dir ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/cci-helm-plugin:latest
+               
+              else
+                echo "no helm charts modified skipping helm chart push"
+                exit 0;    
+              fi             
+      - save_cache: 
+          key: helm-cache-v1-{{ arch }}-{{ .Branch }}-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - /home/circleci/project/helm/version_file.txt   
+            
+ ### Circleci workflow with 3 jobs to build the Artifact and push the docker image & helm charts to ECR & S3 respectively ###   
+                      
+workflows: 
+  version: 2    
+  build&publish:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: 
+                - master
+                - /^pull.*/
+            tags:
+              only: /^v\d+\.\d+\.\d.*/
+          context: aws-devops-context
+      - Push_To_ECR:
+          requires:
+            - build
+          filters:
+            branches:
+              only: 
+                - master
+                - /^pull.*/
+            tags:
+              only: /^v\d+\.\d+\.\d.*/
+          context: aws-devops-context
+      - Push_Helm_Chart:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+                - /^pull.*/  
+          context: aws-devops-context

@@ -1,0 +1,31 @@
+<Platform identifier="_NME_NAM">
+<Title>NME_NAM</Title>
+<Description>Network Analysis Modules and Appliances</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.562</Value>
+      <Value>.1.3.6.1.4.1.9.1.826</Value>
+      <Value>.1.3.6.1.4.1.9.1.1032</Value>
+      <Value>.1.3.6.1.4.1.9.1.1033</Value>
+      <Value>.1.3.6.1.4.1.9.1.1314</Value>
+      <Value>.1.3.6.1.4.1.9.1.1527</Value>
+      <Value>.1.3.6.1.4.1.9.1.1528</Value>
+      <Value>.1.3.6.1.4.1.9.1.1529</Value>
+      <Value>.1.3.6.1.4.1.9.1.1865</Value>
+      <Value>.1.3.6.1.4.1.9.1.1876</Value>
+      <Value>.1.3.6.1.4.1.9.1.1877</Value>
+      <Value>.1.3.6.1.4.1.9.1.1878</Value>
+      <Value>.1.3.6.1.4.1.9.1.2282</Value>
+      <Value>.1.3.6.1.4.1.9.1.2283</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2387</Value>
+      <Value>.1.3.6.1.4.1.9.5.1.3.1.1.2.223</Value>
+      <Value>.1.3.6.1.4.1.9.5.1.3.1.1.2.291</Value>
+      <Value>.1.3.6.1.4.1.9.5.1.3.1.1.2.914</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

@@ -1,0 +1,21 @@
+<Platform identifier="_IOS_7500">
+<Title>IOS_7500</Title>
+<Description>IOS 7500 Series Routers</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.204</Value>
+      <Value>.1.3.6.1.4.1.9.1.288</Value>
+      <Value>.1.3.6.1.4.1.9.1.289</Value>
+      <Value>.1.3.6.1.4.1.9.1.290</Value>
+      <Value>.1.3.6.1.4.1.9.1.291</Value>
+      <Value>.1.3.6.1.4.1.9.1.45</Value>
+      <Value>.1.3.6.1.4.1.9.1.46</Value>
+      <Value>.1.3.6.1.4.1.9.1.48</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

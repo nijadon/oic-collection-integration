@@ -1,0 +1,27 @@
+<MaskRule identifier="_SHOW_SNMP_MASKING_RULE">
+	<Title>show snmp Masking Rule</Title>
+	<Description>Masking Rules for show snmp command on NX-OS</Description>
+	<MaskPatternList>
+		<Locked>false</Locked>
+		<!-- Added in RP4.4.1 -->
+		<MaskPattern>
+			<Expression><![CDATA[^(\S+)( *)(network-operator|network-admin|vdc-operator|vdc-admin)( *)(.*)$]]></Expression>
+			<Replacement><![CDATA[xxxxxxxx $2 $3 $4 $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.4.1 -->
+		<MaskPattern>
+			<Expression><![CDATA[^(\S+)( +)(md5|sha|no)( +)(.*)$]]></Expression>
+			<Replacement><![CDATA[xxxxxxxx $2 $3 $4 $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.4.1 -->
+		<MaskPattern>
+			<Expression><![CDATA[^(Community name: *)(\S+)(.*)]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.4.1 -->
+		<MaskPattern>
+			<Expression><![CDATA[^(.* trap +)(\S+)]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+	</MaskPatternList>
+</MaskRule>

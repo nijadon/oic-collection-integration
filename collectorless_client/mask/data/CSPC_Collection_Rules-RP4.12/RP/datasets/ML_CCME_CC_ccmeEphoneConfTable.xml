@@ -1,0 +1,45 @@
+<Dataset identifier="CCME_CC_ccmeEphoneConfTable">
+<Type>Dynamic</Type>
+<Title>DL_CCME_CC_ccmeEphoneConfTable</Title>
+<CollectionType>SNMP</CollectionType>
+<CategoryName>SNMP</CategoryName>
+<Statements>
+	<Loop identifier="loop1">
+		<Title>Check if CME is enabled</Title>
+			<VectorInput>
+				<SNMPTable>
+					<Input>
+						<Dataset>
+							<DatasetName Failure="error_message">_check_if_CME_enabled</DatasetName>
+						</Dataset>
+					</Input>
+					<Rows></Rows>
+				</SNMPTable>
+			</VectorInput>
+		<Statements>
+			<Condition identifier="Output">
+				<Title>Output</Title>
+					<Input>
+						<SNMPValue>
+							<LoopContext></LoopContext>
+						</SNMPValue>
+					</Input>
+						<Operation>
+							<Matches ignoreCase="false">[1]</Matches>
+						</Operation>
+					<Match>
+							<Output>
+								<Dataset>
+									<DatasetName>_CISCO_CCME_MIB_ccmeEphoneConfTable</DatasetName>
+								</Dataset>
+							</Output>
+						<Goto></Goto>
+					</Match>
+					<NonMatch>
+						<Continue></Continue>
+					</NonMatch>
+			</Condition>
+		</Statements>
+	</Loop>
+</Statements>
+</Dataset>

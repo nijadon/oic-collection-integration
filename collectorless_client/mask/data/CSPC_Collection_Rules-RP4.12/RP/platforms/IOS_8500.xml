@@ -1,0 +1,19 @@
+<Platform identifier="_IOS_8500">
+<Title>IOS_8500</Title>
+<Description>IOS 8500 Series Switch Routers</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.190</Value>
+      <Value>.1.3.6.1.4.1.9.1.196</Value>
+      <Value>.1.3.6.1.4.1.9.1.202</Value>
+      <Value>.1.3.6.1.4.1.9.1.203</Value>
+      <Value>.1.3.6.1.4.1.9.1.230</Value>
+      <Value>.1.3.6.1.4.1.9.1.231</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

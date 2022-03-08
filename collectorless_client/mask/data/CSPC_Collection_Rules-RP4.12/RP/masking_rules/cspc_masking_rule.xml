@@ -1,0 +1,1174 @@
+<MaskRule identifier="_CNC_CONFIG_MASKING_RULE">
+	<Title>CNC Configuration Masking Rule</Title>
+	<Description>Standard Configuration Masking Rules</Description>
+	<MaskPatternList>
+		<Locked>false</Locked>
+		<!-- Added in RP3.26 US53205 (IOS XR) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(\d+\.\d+\.\d+\.\d+:\d +password +encrypted) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(aaa pod server .* server-key ?\d?) (\S+)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*aaa-server[ ]+(\S*)[ ]+(\S*)[ ]+host[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[aaa-server $1 $2 host $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *((administrator|client id|config-administrator|inspector|operator)) (\S+) (encrypted password) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $4 xxxxxxxx $6]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS-XE & WLC) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ap mgmtuser.* username) +(\S+) (password ?\d?) (\S+) (secret ?\d?) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5 xxxxxxxx $7]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.3 US85636 (IOS XR) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(area-password) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(attribute type password) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(authentication credential) +(\S*) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*authentication-key[ ]+(\S*)[ ]+md5[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[authentication-key $1 md5 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*authentication-key[ ]+(\S*)[ ]+md5[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[authentication-key $1 md5 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*authentication-key[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[authentication-key $1 xxxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*authentication-key[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[authentication-key xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.5 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(authentication md5 key-string) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.5 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(authentication text) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.5 (NX-OS) Don't mask anything here-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(authentication md5 key-chain .*)]]></Expression>
+			<Replacement><![CDATA[$1]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.12 US148721 (IOS XR) Don't mask for this use-case -->
+		<MaskPattern>
+			<Expression><![CDATA[^  +(authentication (?:message-digest|null)) *$]]></Expression>
+			<Replacement><![CDATA[$1]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.3 US85636 (IOS XR) ; Modified in RP4.6 US102851-->
+		<MaskPattern>
+			<Expression><![CDATA[^  +(authentication) (\S+) *$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*cable[ ]+shared-secret[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[cable shared-secret $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*certificate[ ]+(\S*)[ ]*(.*)$&lt;REGEXSP&gt;^[ ]*quit$]]></Expression>
+			<Replacement><![CDATA[xxxxxxxx\nquit]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*client[ ]+(\S*)[ ]+key[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[client $1 key xxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(client \S+ server-key)( ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(crash enable encrypted url) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(credentials) +(\S+) +(password ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(credentials) +(\S+) +(\S*) *$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WAAS)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(credentials username) +(\S+) +(domain \S+ password ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WAAS)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(credentials username) +(\S+) +(password ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*crypto[ ]+ca[ ]+certificate[ ](.*)$]]></Expression>
+			<Replacement><![CDATA[crypto ca certificate xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*crypto[ ]+(\S*)[ ]+certificate[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[crypto $1 certificate xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Modified in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(crypto +isakmp +key)( ?\d?) (\S*) +(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*crypto[ ]+pki[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[crypto pki $1 xxxxxxx $2]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*crypto[ ]+pki[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[crypto pki $1 xxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(cts sxp connection default password) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.10 DE97081 (IOS)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(cts sxp default password [0-7]) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.10 DE97081 (IOS)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(cts sxp default password) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(database +archive +\S* +password +\d) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(database +username) +(\S*) +(password +\d) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxx $3 xxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.3 US85636 (IOS XR) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(domain-password) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+secret[ ]+level[ ]+([0-9]+)[ ]+([0-9]+)[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable secret level $1 $2 $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+secret[ ]+level[ ]+([0-9]+)[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable secret level $1 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+secret[ ]+level[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable secret level $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+secret[ ]+([0-9]+)[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable secret $1 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+secret[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable secret $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+secret[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable secret xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+password[ ]+(\S*)[ ]+level[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable passsword xxxxxxxx level $2 $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+password[ ]+level[ ]+([0-9]+)[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable password level $1 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+password[ ]+level[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable password level $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+password[ ]+(\S*)[ ]+encrypted[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable password xxxxxxxx encrypted]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable password $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*enable[ ]+password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[enable password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(encryption .* key \d size \S+)( ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(event manager session cli username) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp[ ]+client[ ]+anonymous-password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ftp client anonymous-password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp[ ]+client[ ]+password[ ]+encrypted[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ftp client password encrypted xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp[ ]+client[ ]+username[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ftp client username xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp-record[ ]+(\S*)[ ]+([0-9]+.[0-9]+.[0-9]+.[0-9]+)[ ]+(\S*)[ ]+des-password[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[ftp-record $1 $2 $3 des-password xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp-record[ ]+(\S*)[ ]+([0-9]+.[0-9]+.[0-9]+.[0-9]+)[ ]+(\S*)[ ]+des-password[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[ftp-record $1 $2 $3 des-password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp-record[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ftp-record $1 $2 $3 $4 xxxxxxxx $6]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp-record[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ftp-record $1 $2 $3 $4 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp-record[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+\"([\S\s]*)\"$]]></Expression>
+			<Replacement><![CDATA[ftp-record $1 $2 $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp-record[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+\"([\S\s]*)\"[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[ftp-record $1 $2 $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ftp-record[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ftp-record xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(glbp \d+ authentication (text|md5 key-string))( ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*hello-password[ ]+accept[ ]+(\S*)[ ]+(\S*)[ ]+level[ ]+([0-9]+)[ ]*$]]></Expression>
+			<Replacement><![CDATA[hello-password accept $1 xxxxxxxx level $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*hello-password[ ]+accept[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[hello-password accept $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*hello-password[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[hello-password $1 $2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*hello-password[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[hello-password $1 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.3 US85636 (IOS XR) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(hsrp ?\d* authentication) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ip[ ]+ftp[ ]+username[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ip ftp username xxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ip[ ]+ftp[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ip ftp password $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ip[ ]+ftp[ ]+password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ip ftp password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ip http client password \d) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ip http client username) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ip msdp password peer \S+|ip msdp vrf \S+ password peer \S+)( ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ip msdp password \S+ ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ip ospf authentication-key)( ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ip[ ]+ospf[ ]+message-digest-key[ ]+([0-9]+)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ip ospf message-digest-key $1 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ip[ ]+ospf[ ]+message-digest-key[ ]+([0-9]+)[ ]+(\S*)[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ip ospf message-digest-key $1 $2 $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.5 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ip pim hello-authentication ah-md5)( ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ip[ ]+username[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ip username xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ip wccp .* password ?\d?) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*[Kk][Ee][Yy]-[Ss][Tt][Rr][Ii][Nn][Gg][ ]+([0-9])[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[key-string xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*key-string[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[key-string $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*key-string[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[key-string xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*key-string[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[key-string xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS-XE) Prevent masking of plain key number; Change regex to optional leading space in RP4.0-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(key \d+) *$]]></Expression>
+			<Replacement><![CDATA[$1]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS-XE); Change regex to optional leading space in RP4.0 -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(key ?\d?) (\S+) *$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(l2tp tunnel password ?\d?) (\S+)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(license key )".*$&lt;REGEXSP&gt;^.*" *$]]></Expression>
+			<Replacement><![CDATA[license key xxxxxxxx ]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*lsp-password[ ]+accept[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[lsp-password accept $1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*lsp-password[ ]+accept[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[lsp-password accept $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*lsp-password[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[lsp-password $1 $2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*lsp-password[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[lsp-password $1 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*message-digest-key[ ]+(\S*)[ ]+md5[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[message-digest-key $1 md5 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*message-digest-key[ ]+(\S*)[ ]+md5[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[message-digest-key $1 md5 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *((mgmtuser|netuser) (delete|telnet|description)) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *((mgmtuser|netuser) (add|password)) (\S+) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx xxxxxxxx $6]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*mpls[ ]+(.*)password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[mpls $1password $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*mpls[ ]+(.*)password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[mpls $1password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*mpls[ ]+ldp[ ]+neighbor[ ]+(\S*)[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$']]></Expression>
+			<Replacement><![CDATA[mpls ldp neighbor $1 password $2 xxxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(mpls ldp.* password .*) +(\S+) *$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*neighbor[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[neighbor password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*neighbor[ ]+password[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[neighbor password $1 $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53205 (IOS XR)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(neighbor +password encrypted) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*neighbor[ ]+black-hole[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[neighbor black-hole password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*neighbor[ ]+trigger-network[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[neighbor trigger-network password $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS); Updated in RP4.0 US67950 -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(neighbor \S+ password ?\d?) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*neighbor[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[neighbor $1 password $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*neighbor[ ]+(\S*)[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[neighbor $1 password $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*neighbor[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[neighbor $1 password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*neighbor[ ]+(\S*)[ ]+password[ ]+encrypted[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[neighbor $1 password encrypted xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ntp[ ]+authentication-key[ ]+([0-9]+)[ ]+md5[ ]+(\S*)[ ]+([0-9]+)$]]></Expression>
+			<Replacement><![CDATA[ntp authentication-key $1 md5 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ntp[ ]+authentication-key[ ]+([0-9]+)[ ]+md5[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[ntp authentication-key $1 md5 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*password[ ]+([0-9]+)[ ]+cisco[ ]*$]]></Expression>
+			<Replacement><![CDATA[password $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[password $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*password[ ]+cisco[ ]*$]]></Expression>
+			<Replacement><![CDATA[password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*password[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[password $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*passwd[ ]+(\S*)[ ]+encrypted[ ]*$]]></Expression>
+			<Replacement><![CDATA[passwd xxxxxxxx encrypted]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ppp[ ]+chap[ ]+password[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ppp chap password $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ppp[ ]+chap[ ]+password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ppp chap password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ppp[ ]+ms-chap[ ]+password[ ]+line[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ppp ms-chap password line xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ppp[ ]+ms-chap[ ]+password[ ]+(\S*)[ ]+line[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ppp ms-chap password $1 line xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ppp[ ]+ms-chap[ ]+password[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ppp ms-chap password $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ppp[ ]+pap[ ]+sent-username[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ppp pap sent-username xxxxxxxx password $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ppp[ ]+pap[ ]+sent-username[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ppp pap sent-username xxxxxxxx password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*ppp[ ]+chap[ ]+host-name[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[ppp chap hostname xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Modified in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(pre-shared-key .* key ?\d?) (.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*pre-shared-key[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[pre-shared-key xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(pre-shared-key .*) (\S+)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(primary ftp .* username) +(\S*) +(password ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(radius fallback-test username) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*radius-server[ ]+key[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[radius-server key $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*radius-server[ ]+key[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[radius-server key xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Modified in RP3.26 US53202 (IOS, NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(radius-server +host .* key)( ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*radius-server[ ]+primary[ ]+(\S*)[ ]+secret[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[radius-server primary $1 secret xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*radius-server[ ]+primary[ ]+(\S*)[ ]+secret[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[radius-server primary $1 secret xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US54374 (NX-OS)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(radius-server .*test username) +(\S*) +(password) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(radius .* encrypted key )(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(receiver .* login) (\S+) (.* password) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(rf-switch snmp-community) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*rsakeypair TP-self-signed-(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[rsakeypair TP-self-signed- xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*rsakeypair[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[rsakeypair xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(rsakeypair) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*secret[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[secret $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS-XE) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(security .* set-key ascii \d) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Modified in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(server-key ?\d?) (\S+)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(server-private .* key)( ?\d?) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.0 US67950 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(set aggressive-mode password ?\d?) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set tacacs key[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[set tacacs key xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+enablepass[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[set enablepass xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+localuser[ ]+user[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[set localuser user xxxxxxxx password xxxxxxxx privilege $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[set password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+snmp[ ]+community[ ]+(\S*)[ ]+public[ ]*$]]></Expression>
+			<Replacement><![CDATA[set snmp community $1 xxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+snmp[ ]+community[ ]+(\S*)[ ]+private[ ]*$]]></Expression>
+			<Replacement><![CDATA[set snmp community $1 xxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+snmp[ ]+community[ ]+(\S*)[ ]+secret[ ]*$]]></Expression>
+			<Replacement><![CDATA[set snmp community $1 xxxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+snmp[ ]+community[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[set snmp community $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+snmp[ ]+trap[ ]+(\S*)[ ]+(\S*)[ ]+(.*)]]></Expression>
+			<Replacement><![CDATA[set snmp trap $1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+radius[ ]+key[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[set radius key xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*set[ ]+tacacs[ ]+key[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[set tacacs key xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp community create) (public)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp community create) (private)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp community (create|accessmode \S+)) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp[ ]+community[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[snmp community xxxxxxxx $2]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp[ ]+community[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[snmp community xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp community ipaddr \S+ \S+) +(public)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp community ipaddr \S+ \S+) +(private)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp community ipaddr \S+ \S+) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC)-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp community mode \S+) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp[ ]+mib[ ]+community-map[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[snmp mib community-map xxxxxxx $2 $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp[ ]+trap-host[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[snmp trap-host xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WLC) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp v3user create) (\S+) (\S+ \S+) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+community[ ]+public[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server community xxxxxx $1]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+community[ ]+private[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server community xxxxxxx $1]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+community[ ]+secret[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server community xxxxxxxxx $1]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+community[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server community xxxxxxxx $2]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+community[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server community xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+community[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server community xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+community-map[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server community-map xxxxxxxx $2]]></Replacement>
+		</MaskPattern>
+		<!-- AS part of US17513 Clean up ASA Dynamic Datasets updated masking with below 2 patterns  -->
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+inside[ ]+(\S*)[ ]+poll[ ]+(\S*)[ ]+(\S*)]]></Expression>
+			<Replacement><![CDATA[snmp-server host inside $1 poll $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+inside[ ]+(\S*)[ ]+community[ ]+(\S*)[ ]+version[ ]+2c]]></Expression>
+			<Replacement><![CDATA[snmp-server host inside $1 community xxxxxxxx version 2c]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+traps[ ]+version[ ]+1[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 traps version 1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+traps[ ]+version[ ]+2c[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 traps version 2c xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+traps[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 traps version 3 $2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+traps[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 traps xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+version[ ]+1[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 version 1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+version[ ]+2c[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 version 2c xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 version 3 $2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+informs[ ]+version[ ]+1[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 informs version 1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+informs[ ]+version[ ]+2c[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 informs version 2c xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+informs[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 informs version 3 $2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+informs[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 informs xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+(\S*)[ ]+community[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 $2 community xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+informs[ ]+version[ ]+2c[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 informs version 2c xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+informs[ ]+version[ ]+1[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 informs version 1 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+informs[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 informs version 3 $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+informs[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 informs version 3 $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+informs[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 informs xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+traps[ ]+version[ ]+2c[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 traps version 2c xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+traps[ ]+version[ ]+1[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 traps version 1 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+traps[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 traps version 3 $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+traps[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 traps version 3 $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+traps[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 traps xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+traps[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 traps xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+version[ ]+2c[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 version 2c xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+version[ ]+1[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 version 1 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 version 3 $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+version[ ]+3[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 version 3 $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+vrf[ ]+(\S*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 vrf $2]]></Replacement>
+		</MaskPattern>
+		<!-- As part of US17600 Remove masking of tacacs-server IP 	Address in CSPC added below pattern -->
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+use-vrf[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 use-vrf $2]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server host \d+\.\d+\.\d+\.\d+ traps?) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.6 US102851 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server host \S* source-interface) (.*)$]]></Expression>
+			<Replacement><![CDATA[$1 $2]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.10 DE97081 (ASA) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server host) (\S+ \S+) (poll community \d+|trap community \d+|community \d+) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 $2 $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.10 DE97081 (ASA) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server host) (\S+ \S+) (poll version 3|trap version 3|version 3) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 $2 $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+host[ ]+(\S*)[ ]+(\S*)[ ]*(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server host $1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server mib community-map) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US54374 (NX-OS), modified in RP3.27, modified in RP4.10 (DE97081)for ASA priv options-->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server user) (\S+) (.*auth (md5|sha)) (\S+) (priv aes-128|priv aes 128|priv aes 192|priv aes 256|priv 3des|priv des|priv) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $6 xxxxxxxx $8]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.3 US85636 (IOS-XR) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server user) (\S+) (.*auth .* encrypted) (\S+) (priv .* encrypted) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5 xxxxxxxx $7]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (NX-OS), modified in RP4.10 (DE97081) for ASA use-case and included the XR use-case below and moved this above XR case -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server user) (\S+) (.*auth (md5 encrypted|md5|sha)) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $6]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.3 US85636 (IOS-XR) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server user) (\S+) (.*auth .* encrypted) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server user) +(\S+) +(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Modified in RP4.3 US85636 (IOS-XR) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp-server user) (\S*) (\S*) (\S*) (auth|priv) (\S*) (\S*) (\S*)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 $4 $5 $6 $7 xxxxxxxx $8]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+user[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+auth[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+priv[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[snmp-server user $1 $2 $3 auth $4 $5 xxxxxx priv $7 $8 xxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*snmp-server[ ]+user[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+auth[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+priv[ ]+(\S*)[ ]+(\S*)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[snmp-server user $1 $2 $3 auth $4 $5 xxxxxx priv $7 $8 xxxxxx $10]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(snmp .* encrypted (name|security-name) )(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ssh key )(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ssl-certificate string )".*$&lt;REGEXSP&gt;^-+END .*$]]></Expression>
+			<Replacement><![CDATA[ssl-certificate string xxxxxxxx ]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(ssl-private-key string )".*$&lt;REGEXSP&gt;^-+END .*$]]></Expression>
+			<Replacement><![CDATA[ssl-certificate string xxxxxxxx ]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*standby[ ]+(.*)authentication[ ]+text[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[standby $1authentication text xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*standby[ ]+(.*)authentication[ ]+md5[ ]+key-string[ ]+([0-9]+)[ ]+(\S*)[ ]+timeout[ ]+([0-9]+)*$]]></Expression>
+			<Replacement><![CDATA[standby $1authentication md5 key-string $2 xxxxxxxx timeout $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*standby[ ]+(.*)authentication[ ]+md5[ ]+key-string[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[standby $1authentication md5 key-string $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*standby[ ]+(.*)authentication[ ]+md5[ ]+key-string[ ]+(\S*)[ ]+timeout[ ]+([0-9]+)*$]]></Expression>
+			<Replacement><![CDATA[standby $1authentication md5 key-string xxxxxxxx timeout $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*standby[ ]+(.*)authentication[ ]+md5[ ]+key-string[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[standby $1authentication md5 key-string xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*standby[ ]+(.*)authentication[ ]+md5[ ]+key-chain[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[standby $1authentication md5 key-chain xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*standby[ ]+(.*)authentication[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[standby authentication xxxxxxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*subject-name[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[subject-name xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- As part of US17600 Remove masking of tacacs-server IP Address in CSPC
+		updated below pattern by removing quotes in replacement string -->
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*tacacs-server[ ]+(.*)key[ ]+(.*)"([^"]+)"(.*)]]></Expression>
+			<Replacement><![CDATA[tacacs-server $1key $2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<!-- Modified in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(tacacs-server +.*key)( ?\d?) +(\S*) *(.*)$$]]></Expression>
+			<Replacement><![CDATA[$1$2 xxxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*tacacs-server key[ ]+([0-9])[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[tacacs-server key $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*tacacs-server[ ]+host[ ]+(\S*)[ ]+key[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[tacacs-server host xxxxxxxx key xxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*tacacs-server[ ]+host[ ]+(\S*)[ ]+key[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[tacacs-server host xxxxxxxx key xxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US54374 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(tacacs-server .*test username) +(\S*) +(password) +(\S*) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP4.3 US85636 (IOS XR) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(text-authentication) (\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*trusted-key[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[trusted-key xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- AS part of US17513 Clean up ASA Dynamic Datasets updated masking with below pattern -->
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]+encrypted[ ]+privilege[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx password xxxxxxxx encrypted privilege $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]+encrypted]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx password xxxxxxxx encrypted]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx password $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxx password $2 xxxxxxx $4]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx password xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+(.*)password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx $2password $3 xxxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+secret[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx secret $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+secret[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx secret xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+(.*)secret[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx $2secret $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+privilege[ ]+(\S*)[ ]+secret[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx privilege $2 secret $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+privilege[ ]+([0-9]+)[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]+(.*)$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxx privilege $2 password $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+privilege[ ]+([0-9]+)[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxx privilege $2 password $3 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US60345 (WAAS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(username) (\S+) (privilege .*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]+(.*)nopassword[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxx $1 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*username netadmin secret[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[username netadmin secret xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US54374 (NX-OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(username) +(\S*) +(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) ; Revised in RP3.27 -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(web admin .* name) (\S+) (password|secret \d) (\S+) *(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxx $3 xxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*wlccp[ ]+ap[ ]+username[ ]+(\S*)[ ]+password[ ]+([0-9]+)[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[wlccp ap username xxxxxxxx password $2 xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*wlccp[ ]+ap[ ]+username[ ]+(\S*)[ ]+password[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[wlccp ap username xxxxxxxx password xxxxxxx]]></Replacement>
+		</MaskPattern>
+		<MaskPattern>
+			<Expression><![CDATA[^[ ]*wlccp[ ]+ap[ ]+username[ ]+(\S*)[ ]*$]]></Expression>
+			<Replacement><![CDATA[wlccp ap username xxxxxxxx]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.26 US53202 (IOS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(xml user) +(\S*) +(password) +(\S*) +(\d+.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3 xxxxxxxx $5]]></Replacement>
+		</MaskPattern>
+		<!-- Added in RP3.27 US61795 (Star OS) -->
+		<MaskPattern>
+			<Expression><![CDATA[^ *(.* encrypted password) +(\S+)(.*)$]]></Expression>
+			<Replacement><![CDATA[$1 xxxxxxxx $3]]></Replacement>
+		</MaskPattern>
+	</MaskPatternList>
+</MaskRule>

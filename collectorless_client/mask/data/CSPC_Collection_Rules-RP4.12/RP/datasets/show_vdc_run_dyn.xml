@@ -1,0 +1,144 @@
+<Dataset identifier="show_vdc_run_dyn">
+	<Type>Dynamic</Type>
+	<Title>DL_show vdc run</Title>
+	<Description>Mandatory,Conditional collection of running config for each parsed VDC</Description>
+	<CollectionType>CLI</CollectionType>
+	<CategoryName>Configuration</CategoryName>
+	<Statements>
+		<Loop identifier="_show_vdc_1">
+			<VectorInput>
+				<Block>
+					<Input>
+						<Dataset>
+							<DatasetName Failure="error_message">show_vdc</DatasetName>
+						</Dataset>
+					</Input>
+					<Params>
+						<Start ignoreCase="false">^vdc_id\s+vdc_name\s+state\s+mac\s+type\s+lc</Start>
+						<End ignoreCase="false">^vdc_id\s+vdc_name\s+state\s+mac\s+type\s+lc</End>
+						<IOSConfigBlocks>false</IOSConfigBlocks>
+					</Params>
+				</Block>
+			</VectorInput>
+			<Statements>
+				<Loop identifier="_show_vdc_1_1">
+					<VectorInput>
+						<Line>
+							<Input>
+								<LoopContext/>
+							</Input>
+							<Params>
+								<Match ignoreCase="false">.*</Match>
+							</Params>
+						</Line>
+					</VectorInput>
+					<Statements>
+						<Condition identifier="_show_vdc_1_2">
+							<Input>
+								<LoopContext/>
+							</Input>
+							<Operation>
+								<Matches ignoreCase="false">^vdc_id\s+vdc_name\s+state\s+mac\s+type\s+lc</Matches>
+							</Operation>
+							<Match>
+								<Continue/>
+							</Match>
+							<NonMatch>
+								<Goto/>
+							</NonMatch>
+						</Condition>
+						<Condition identifier="_show_vdc_1_2_1">
+							<Input>
+								<LoopContext/>
+							</Input>
+							<Operation>
+								<Matches ignoreCase="false">^------.*$</Matches>
+							</Operation>
+							<Match>
+								<Continue/>
+							</Match>
+							<NonMatch>
+								<Goto/>
+							</NonMatch>
+						</Condition>
+						<Condition identifier="_show_vdc_1_3">
+							<Input>
+								<LoopContext/>
+							</Input>
+							<Operation>
+								<Matches ignoreCase="false">^(?:(?:[02-9])|(?:[0-9]\d+))\s*(\S+)\s+(\S+)\s+(.*?)\s*$</Matches>
+							</Operation>
+							<Match>
+								<Assignment>
+									<Variable append="true" onlyIfNotNull="true" operation="add" trim="true" vectorType="List">vdc_name</Variable>
+									<Value>&lt;_show_vdc_1_3.1&gt;</Value>
+								</Assignment>
+								<Assignment>
+									<Variable append="true" onlyIfNotNull="true" operation="add" trim="true" vectorType="List">state</Variable>
+									<Value>&lt;_show_vdc_1_3.2&gt;</Value>
+								</Assignment>
+								<Assignment>
+									<Variable append="false" onlyIfNotNull="true" operation="add" trim="true" vectorType="List">_show_vdc_1_3_matched</Variable>
+									<Value>TRUE</Value>
+								</Assignment>
+								<Continue/>
+							</Match>
+							<NonMatch>
+								<Goto/>
+							</NonMatch>
+						</Condition>
+						<Condition identifier="_show_context_1_3_post">
+							<Input>
+								<Variable>_show_vdc_1_3_matched</Variable>
+							</Input>
+							<Operation>
+								<Equals ignoreCase="false">TRUE</Equals>
+							</Operation>
+							<Match>
+								<Goto/>
+							</Match>
+							<NonMatch>
+								<Continue/>
+							</NonMatch>
+						</Condition>
+					</Statements>
+				</Loop>
+			</Statements>
+		</Loop>
+		<Loop identifier="output_loop">
+			<VectorInput>
+				<Variable unique="true">
+					<VariableName>vdc_name</VariableName>
+				</Variable>
+			</VectorInput>
+			<Statements>
+				<Condition identifier="output_cond">
+					<Input>
+						<LoopContext/>
+					</Input>
+					<Operation>
+						<NotEquals ignoreCase="false"/>
+					</Operation>
+					<Match>
+						<Assignment>
+							<Variable append="false" onlyIfNotNull="true" operation="add" trim="true" vectorType="List">name</Variable>
+							<Value/>
+						</Assignment>
+						<Output>
+							<Dataset>
+								<DatasetName>show_vdc_run</DatasetName>
+								<Variables>
+									<Variable>name</Variable>
+								</Variables>
+							</Dataset>
+						</Output>
+						<Continue/>
+					</Match>
+					<NonMatch>
+						<Continue/>
+					</NonMatch>
+				</Condition>
+			</Statements>
+		</Loop>
+	</Statements>
+</Dataset>

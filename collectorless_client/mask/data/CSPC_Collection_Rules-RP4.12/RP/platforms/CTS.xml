@@ -1,0 +1,21 @@
+<Platform identifier="_CTS">
+<Title>CTS</Title>
+<Description>Telepresence Codecs</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.1003</Value>
+      <Value>.1.3.6.1.4.1.9.1.1433</Value>
+      <Value>.1.3.6.1.4.1.9.1.1434</Value>
+      <Value>.1.3.6.1.4.1.9.1.1435</Value>   
+      <Value>.1.3.6.1.4.1.9.1.1436</Value>
+      <Value>.1.3.6.1.4.1.9.1.2161</Value>
+      <Value>.1.3.6.1.4.1.9.1.800</Value>
+      <Value>.1.3.6.1.4.1.9.1.801</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

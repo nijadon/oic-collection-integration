@@ -1,0 +1,41 @@
+<Platform identifier="_WLC">
+<Title>WLC</Title>
+<Description>WLC running AireOS</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.14179</Value>
+      <Value>.1.3.6.1.4.1.14179.1.1.4.1</Value>
+      <Value>.1.3.6.1.4.1.14179.1.1.4.2</Value>
+      <Value>.1.3.6.1.4.1.14179.1.1.4.3</Value>
+      <Value>.1.3.6.1.4.1.14179.1.1.4.4</Value>
+      <Value>.1.3.6.1.4.1.14179.1.1.4.5</Value>
+      <Value>.1.3.6.1.4.1.9.1.747</Value>
+      <Value>.1.3.6.1.4.1.9.1.818</Value>
+      <Value>.1.3.6.1.4.1.9.1.828</Value>
+      <Value>.1.3.6.1.4.1.9.1.1069</Value>
+      <Value>.1.3.6.1.4.1.9.1.1230</Value>
+      <Value>.1.3.6.1.4.1.9.1.1279</Value>
+      <Value>.1.3.6.1.4.1.9.1.1293</Value>
+      <Value>.1.3.6.1.4.1.9.1.1295</Value>
+      <Value>.1.3.6.1.4.1.9.1.1615</Value>
+      <Value>.1.3.6.1.4.1.9.1.1631</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2170</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2171</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2250</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2370</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2371</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2372</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2373</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2374</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2427</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2489</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2490</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2670</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

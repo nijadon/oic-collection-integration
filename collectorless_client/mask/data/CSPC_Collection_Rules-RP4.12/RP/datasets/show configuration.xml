@@ -1,0 +1,58 @@
+<Dataset identifier="_show configuration">
+	<Title>show configuration</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>Configuration</CategoryName>
+	<TagName>Config</TagName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_FXOS">
+			<CLI>
+				<Command>show configuration</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IPS">
+			<CLI>
+				<Command>show configuration</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NME_NAM">
+			<CLI>
+				<Command>show configuration</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS">
+			<CLI>
+				<Command>show configuration</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NXOS_UCS_1">
+			<CLI>
+				<Command>show configuration</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_StarOS">
+			<CLI>
+				<Command>show configuration</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+		<VersionedDataset identifier="_NGA">
+			<CLI>
+				<Command>show configuration</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

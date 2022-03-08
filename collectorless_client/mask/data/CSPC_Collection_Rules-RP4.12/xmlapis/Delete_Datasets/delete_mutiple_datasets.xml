@@ -1,0 +1,68 @@
+<Request xmlns="http://www.parinetworks.com/api/schemas/1.1" requestId="44444">
+	<Manage>
+		<Delete operationId="1"  forceIfLocked="true">
+			<DatasetList>
+				<Dataset identifier="_TP_Codecs_DYN_CISCO-TELEPRESENCE-CALL-MIB"/>
+				<Dataset identifier="_TP_Codecs_DYN_CISCO-TELEPRESENCE-CALL-MIB_ctpc"/>
+				<Dataset identifier="_TP_Codecs_DYN_OLD_CISCO_CHASSIS_MIB_Asset"/>
+				<Dataset identifier="__opt_CSCOar_bin_aregcmd _C localhost _N admin _P aicuser ls _radius _ grep _i version"/>
+				<Dataset identifier="_ActiveIPPhone"/>
+				<Dataset identifier="_AIRESPACE_WIRELESS_MIB_bsnMobileStation"/>
+				<Dataset identifier="_BASIS_GENERIC_MIB"/>
+				<Dataset identifier="_CHASSISMGREXT_MIB_apChassisMgrExtModule_1"/>
+				<Dataset identifier="_CISCO_CCM_MIB_ccmPhone"/>
+				<Dataset identifier="_CISCO_CCM_MIB_IBMPSGSerialNumberInformationEntry"/>
+				<Dataset identifier="_CISCO_ENTITY_ASSET_MIB"/>
+				<Dataset identifier="_CISCO_ENTITY_FRU_CONTROL_MIB_cefcModule"/>
+				<Dataset identifier="_CISCO_FLASH_MIB"/>
+				<Dataset identifier="_CISCO_PROCESS_MIB_cpmProcessName"/>
+				<Dataset identifier="_CISCO_PROCESS_MIB_cpmProcExtPriority"/>
+				<Dataset identifier="_CISCO-TELEPRESENCE-CALL-MIB"/>
+				<Dataset identifier="_CISCO-TELEPRESENCE-CALL-MIB_ctpc"/>
+				<Dataset identifier="_CISCO-UNIFIED-COMPUTING-COMPUTE-MIB"/>
+				<Dataset identifier="_CISCO-UNIFIED-COMPUTING-EQUIPMENT-MIB"/>
+				<Dataset identifier="_ConfiguredIPPhone"/>
+				<Dataset identifier="_ENTITY_MIB"/>
+				<Dataset identifier="_entPhysicalSoftwareRev"/>
+				<Dataset identifier="_EXPRESSION_MIB"/>
+				<Dataset identifier="_OLD_CISCO_CHASSIS_MIB_Asset"/>
+				<Dataset identifier="_OLD_CISCO_INTERFACES_MIB_locIfHardType"/>
+				<Dataset identifier="_prtdiag _ grep _i _memory size_"/>
+				<Dataset identifier="_prtdiag _ grep _i _system configuration_"/>
+				<Dataset identifier="_show arp switch"/>
+				<Dataset identifier="_show atm map"/>
+				<Dataset identifier="_show audio status"/>
+				<Dataset identifier="_show boot"/>
+				<Dataset identifier="_show bts detail"/>
+				<Dataset identifier="_show call statistics all"/>
+				<Dataset identifier="_show call status"/>
+				<Dataset identifier="_show cdp neighbor detail"/>
+				<Dataset identifier="_show controllers"/>
+				<Dataset identifier="_show ems"/>
+				<Dataset identifier="_show frame_relay map"/>
+				<Dataset identifier="_show install running"/>
+				<Dataset identifier="_show interfaces status"/>
+				<Dataset identifier="_show interfaces trunk"/>
+				<Dataset identifier="_show meetings summary"/>
+				<Dataset identifier="_show memory summary"/>
+				<Dataset identifier="_show syslog"/>
+				<Dataset identifier="_show syslog server"/>
+				<Dataset identifier="_show time"/>
+				<Dataset identifier="_show video status"/>
+				<Dataset identifier="_showModule 1"/>
+				<Dataset identifier="_showModule 2"/>
+				<Dataset identifier="_showModule 3"/>
+				<Dataset identifier="_showModule 4"/>
+				<Dataset identifier="_showModule 5"/>
+				<Dataset identifier="_showModule 6"/>
+				<Dataset identifier="_showModule 7"/>
+				<Dataset identifier="_showModule 8"/>
+				<Dataset identifier="_showModule 9"/>
+				<Dataset identifier="_showModule 10"/>
+				<Dataset identifier="_showModule 11"/>
+				<Dataset identifier="_uname _sr"/>
+				<Dataset identifier="_version"/>
+			</DatasetList>
+		</Delete>
+	</Manage>
+</Request>

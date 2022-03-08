@@ -1,0 +1,14 @@
+<Dataset identifier="_xconfiguration">
+<Title>xconfiguration</Title>
+	<Description>Mandatory,Tandberg Configuration</Description>
+<CategoryName>Configuration</CategoryName>
+<CollectionType>CLI</CollectionType>
+<VersionedDatasetList>
+  <VersionedDataset identifier="_Tandberg">
+    <CLI>
+       <Command>xconfiguration</Command>
+       <IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+    </CLI>
+   </VersionedDataset>
+</VersionedDatasetList>
+</Dataset>

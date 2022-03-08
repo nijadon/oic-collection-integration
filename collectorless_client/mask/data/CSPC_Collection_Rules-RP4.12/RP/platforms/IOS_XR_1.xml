@@ -1,0 +1,31 @@
+<Platform identifier="_IOS_XR_1">
+  <Title>IOS_XR_12000</Title>
+  <Description>IOS XR 12K (GSR) Series Routers</Description>
+  <Locked>false</Locked>
+  <MatchType>ALL</MatchType>
+  <PlatformConditionList>
+    <PlatformCondition>
+      <PropertyName>SNMP_OID</PropertyName>
+      <Operator>IN_LIST</Operator>
+      <ValueList>
+        <Value>.0.0</Value>
+        <Value>.1.3.6.1.4.1.9.1.273</Value>
+        <Value>.1.3.6.1.4.1.9.1.348</Value>
+        <Value>.1.3.6.1.4.1.9.1.385</Value>
+        <Value>.1.3.6.1.4.1.9.1.388</Value>
+        <Value>.1.3.6.1.4.1.9.1.394</Value>
+        <Value>.1.3.6.1.4.1.9.1.423</Value>
+        <Value>.1.3.6.1.4.1.9.1.477</Value>
+        <Value>.1.3.6.1.4.1.9.1.478</Value>
+        <Value>.1.3.6.1.4.1.9.1.590</Value>
+      </ValueList>
+    </PlatformCondition>
+    <PlatformCondition>
+      <PropertyName>SNMP_SYS_DESCR</PropertyName>
+      <Operator>MATCHES_REGULAR_EXPRESSION</Operator>
+      <ValueList>
+        <Value>.*XR.*</Value>
+      </ValueList>
+    </PlatformCondition>
+  </PlatformConditionList>
+</Platform>

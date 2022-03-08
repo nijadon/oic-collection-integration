@@ -1,0 +1,15 @@
+<Platform identifier="_DPA">
+<Title>DPA</Title>
+<Description>DPA 7600 Gateways</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.365</Value>
+      <Value>.1.3.6.1.4.1.9.1.381</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

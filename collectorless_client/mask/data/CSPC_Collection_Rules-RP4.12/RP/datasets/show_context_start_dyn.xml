@@ -1,0 +1,79 @@
+<Dataset identifier="show_context_start_dyn">
+	<Type>Dynamic</Type>
+	<Title>DL_show context start Dynamic</Title>
+	<CollectionType>CLI</CollectionType>
+	<CategoryName>Configuration</CategoryName>
+	<Statements>
+		<Loop identifier="_show_context_1">
+			<VectorInput>
+				<Line>
+					<Input>
+						<Dataset>
+							<DatasetName Failure="error_message">_show context</DatasetName>
+						</Dataset>
+					</Input>
+					<Params>
+						<Match ignoreCase="false">^Name:\s(\S+)*</Match>
+					</Params>
+				</Line>
+			</VectorInput>
+			
+			<Statements>
+					     <Condition identifier="_show_context_1_1">
+							<Input>
+								<LoopContext/>
+							</Input>
+							<Operation>
+								<NotEquals Ignorecase="true"></NotEquals>
+							</Operation>
+							<Match>
+								<Assignment>
+									<Variable append="true" onlyIfNotNull="true" trim="true" vectorType="List" operation="add">con_name</Variable>
+									<Value>&lt;_show_context_1.1&gt;</Value>
+								</Assignment>
+								<Continue/>
+							</Match>
+							<NonMatch>
+								<Continue/>
+					                 </NonMatch>
+				             </Condition>
+				</Statements>
+		    </Loop>
+		
+		<Loop identifier="output_loop">
+			<VectorInput>
+				<Variable unique="true">
+					<VariableName>con_name</VariableName>
+				</Variable>
+			</VectorInput>
+			<Statements>
+				<Condition identifier="output_cond">
+					<Input>
+						<LoopContext/>
+					</Input>
+					<Operation>
+						<NotEquals ignoreCase="false"/>
+					</Operation>
+					<Match>
+						<Assignment>
+							<Variable append="false" onlyIfNotNull="true" trim="true" vectorType="List" operation="add">name</Variable>
+							<Value/>
+						</Assignment>
+						<Output>
+							<Dataset>
+								<DatasetName>show_context_start</DatasetName>
+								<Variables>
+									<Variable>name</Variable>
+								</Variables>
+							</Dataset>
+						</Output>
+						<Continue/>
+					</Match>
+					<NonMatch>
+						<Continue/>
+					</NonMatch>
+				</Condition>
+			</Statements>
+		</Loop>
+		</Statements>
+</Dataset>

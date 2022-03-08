@@ -1,0 +1,15 @@
+<Platform identifier="_IOS_LS1010">
+<Title>IOS_LS1010</Title>
+<Description>IOS LS1010 ATM Switches</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.107</Value>
+      <Value>.1.3.6.1.4.1.9.1.164</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

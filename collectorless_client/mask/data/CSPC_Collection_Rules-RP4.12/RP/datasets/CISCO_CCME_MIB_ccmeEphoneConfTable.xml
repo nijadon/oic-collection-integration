@@ -1,0 +1,66 @@
+<Dataset identifier="_CISCO_CCME_MIB_ccmeEphoneConfTable">
+	<Title>CISCO-CCME-MIB_ccmeEphoneConfTable</Title>
+	<Description>Mandatory,Conditionally collected if CME enabled; Used to identify CME phones.</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Output</CategoryName>
+	<CollectionType>SNMP</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS">
+			<SNMP>
+				<SNMPRequest>
+					<RequestType>Column</RequestType>
+					<ObjectList>
+						<Object>
+							<Id>.1.3.6.1.4.1.9.9.439.1.1.43.1.2</Id>
+							<Title>ccmeEphoneIpAddressType</Title>
+							<Type>Column</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.9.9.439.1.1.43.1.3</Id>
+							<Title>ccmeEphoneIpAddress</Title>
+							<Type>Column</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.9.9.439.1.1.43.1.4</Id>
+							<Title>ccmeEphoneMacAddress</Title>
+							<Type>Column</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.9.9.439.1.1.43.1.5</Id>
+							<Title>ccmeEphoneModel</Title>
+							<Type>Column</Type>
+						</Object>
+					</ObjectList>
+				</SNMPRequest>
+			</SNMP>
+		</VersionedDataset>
+		<VersionedDataset identifier="_IOS_XE">
+			<SNMP>
+				<SNMPRequest>
+					<RequestType>Column</RequestType>
+					<ObjectList>
+						<Object>
+							<Id>.1.3.6.1.4.1.9.9.439.1.1.43.1.2</Id>
+							<Title>ccmeEphoneIpAddressType</Title>
+							<Type>Column</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.9.9.439.1.1.43.1.3</Id>
+							<Title>ccmeEphoneIpAddress</Title>
+							<Type>Column</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.9.9.439.1.1.43.1.4</Id>
+							<Title>ccmeEphoneMacAddress</Title>
+							<Type>Column</Type>
+						</Object>
+						<Object>
+							<Id>.1.3.6.1.4.1.9.9.439.1.1.43.1.5</Id>
+							<Title>ccmeEphoneModel</Title>
+							<Type>Column</Type>
+						</Object>
+					</ObjectList>
+				</SNMPRequest>
+			</SNMP>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

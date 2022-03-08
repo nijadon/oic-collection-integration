@@ -1,0 +1,30 @@
+<Dataset identifier="show_vdc_start">
+	<Title>switchto vdc show startup-config (CC)</Title>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Output</CategoryName>
+	<Description>Mandatory,Collected for each VDC</Description>
+	<CreatedUser>admin</CreatedUser>
+	<Locked>false</Locked>
+	<TagName>Config</TagName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_NXOS_VDC">
+			<CLI>
+				<Command>show startup-config</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+				<SubMode>
+					<EntryCommandList>
+						<EntryCommand>
+							<MainEntryCommand>switchto vdc &lt;name&gt;</MainEntryCommand>
+						</EntryCommand>
+					</EntryCommandList>
+					<ExitCommandList>
+						<ExitCommand>
+							<MainExitCommand>switchback</MainExitCommand>
+						</ExitCommand>
+					</ExitCommandList>
+				</SubMode>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

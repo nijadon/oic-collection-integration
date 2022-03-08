@@ -1,0 +1,44 @@
+<Dataset identifier="_DL_show memory statistics_CLI">
+	<Type>Dynamic</Type>
+	<Title>DL_show memory statistics_CLI</Title>
+	<CollectionType>CLI</CollectionType>
+	<CategoryName>CLI-Performance</CategoryName>
+	<Description>Optional,Conditional Collection of CLI because command changed in later code.</Description>
+  <Statements>
+    <Loop identifier="loop1 ">
+      <VectorInput>
+        <Line>
+          <Input>
+          <Dataset>
+            <DatasetName Failure="command_status">_show memory statistics XE conditional</DatasetName>
+          </Dataset>
+        </Input>
+          <Params>
+            <Match ignoreCase="false">Failed</Match>
+          </Params>
+        </Line>
+      </VectorInput>
+      <Statements>
+        <Condition identifier="output_cond">
+          <Input>
+          <LoopContext></LoopContext>
+        </Input>
+          <Operation>
+            <NotEquals ignoreCase="true"></NotEquals>
+          </Operation>
+          <Match>
+            <Output>
+              <Dataset>
+                <DatasetName>_show memory XE conditional</DatasetName>
+              </Dataset>
+            </Output>
+            <Continue></Continue>
+          </Match>
+          <NonMatch>
+            <Continue></Continue>
+          </NonMatch>
+        </Condition>
+      </Statements>
+    </Loop>
+  </Statements>
+</Dataset>

@@ -1,0 +1,17 @@
+<Platform identifier="_ACSW">
+<Title>ACSW</Title>
+<Description>ACE Appliances and Modules</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+      <Value>.1.3.6.1.4.1.9.1.1231</Value>
+      <Value>.1.3.6.1.4.1.9.1.1291</Value>
+      <Value>.1.3.6.1.4.1.9.1.730</Value>
+      <Value>.1.3.6.1.4.1.9.1.824</Value>
+    </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

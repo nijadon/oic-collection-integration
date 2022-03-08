@@ -1,0 +1,14 @@
+<Dataset identifier="_show gsr chassis_info">
+	<Title>show gsr chassis-info</Title>
+	<Description>Mandatory</Description>
+	<CategoryName>CLI-Inventory</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_12000">
+			<CLI>
+				<Command>show gsr chassis-info</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

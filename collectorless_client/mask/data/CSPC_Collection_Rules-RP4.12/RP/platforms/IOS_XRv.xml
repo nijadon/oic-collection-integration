@@ -1,0 +1,16 @@
+<Platform identifier="_IOS_XRv">
+<Title>IOS_XRv</Title>
+<Description>IOS XRv Routers</Description>
+<MatchType>ANY</MatchType>
+<PlatformConditionList>
+  <PlatformCondition>
+    <PropertyName>SNMP_OID</PropertyName>
+    <Operator>IN_LIST</Operator>
+    <ValueList>
+	  <Value>.1.3.6.1.4.1.9.1.2264</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2782</Value>
+	  <Value>.1.3.6.1.4.1.9.1.2783</Value>
+     </ValueList>
+  </PlatformCondition>
+</PlatformConditionList>
+</Platform>

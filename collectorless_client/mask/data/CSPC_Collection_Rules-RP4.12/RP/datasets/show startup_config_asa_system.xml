@@ -1,0 +1,30 @@
+<Dataset identifier="_show startup_config_asa_system">
+  <Title>system context show startup_config</Title>
+  <Description>Mandatory,Added in RP3.26</Description>
+  <CategoryName>Configuration</CategoryName>
+  <TagName>Config</TagName>
+  <CollectionType>CLI</CollectionType>
+  <VersionedDatasetList>
+    <VersionedDataset identifier="_PixOS">
+      <CLI>
+        <Command>show startup-config</Command>
+        <IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+        <MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+        <SubMode>
+          <EntryCommandList>
+            <EntryCommand>
+              <MainEntryCommand>changeto system</MainEntryCommand>
+              <SubEntryCommand />
+            </EntryCommand>
+          </EntryCommandList>
+          <ExitCommandList>
+            <ExitCommand>
+              <SubExitCommand />
+              <MainExitCommand>changeto context admin</MainExitCommand>
+            </ExitCommand>
+          </ExitCommandList>
+        </SubMode>
+      </CLI>
+    </VersionedDataset>
+  </VersionedDatasetList>
+</Dataset>

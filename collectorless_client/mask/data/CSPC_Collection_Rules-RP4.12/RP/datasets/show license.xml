@@ -1,0 +1,14 @@
+<Dataset identifier="_show license">
+	<Title>show license</Title>
+	<Description>Optional,Added in RP3.26</Description>
+	<CategoryName>CLI-Licensing</CategoryName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_IOS_XR">
+			<CLI>
+				<Command>show license</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

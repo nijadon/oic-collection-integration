@@ -1,0 +1,30 @@
+<Dataset identifier="show_context_asa_start">
+	<Title>context show startup-config</Title>
+	<Description>Mandatory,Firewall Context Configuration</Description>
+	<CategoryName>DO NOT SELECT - Dynamic Dataset Output</CategoryName>
+	<CreatedUser>admin</CreatedUser>
+	<Locked>false</Locked>
+	<TagName>Config</TagName>
+	<CollectionType>CLI</CollectionType>
+	<VersionedDatasetList>
+		<VersionedDataset identifier="_PixOS">
+			<CLI>
+				<Command>show startup-config</Command>
+				<IntegrityRule>_CNC_GLOBAL_INTEG_RULE</IntegrityRule>
+				<MaskRule>_CNC_CONFIG_MASKING_RULE</MaskRule>
+				<SubMode>
+					<EntryCommandList>
+						<EntryCommand>
+							<MainEntryCommand>changeto context &lt;name&gt;</MainEntryCommand>
+						</EntryCommand>
+					</EntryCommandList>
+					<ExitCommandList>
+						<ExitCommand>
+							<MainExitCommand>changeto context admin</MainExitCommand>
+						</ExitCommand>
+					</ExitCommandList>
+				</SubMode>
+			</CLI>
+		</VersionedDataset>
+	</VersionedDatasetList>
+</Dataset>

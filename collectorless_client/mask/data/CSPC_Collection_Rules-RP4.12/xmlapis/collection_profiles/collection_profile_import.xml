@@ -1,0 +1,10 @@
+<Request xmlns="http://www.parinetworks.com/api/schemas/1.1" requestId="44444">
+	<Execute>
+		<ImportSettings operationId="1">
+			<SettingsFileName>CP.zip</SettingsFileName>
+			<Replace>true</Replace>
+			<Lock>false</Lock>
+			<IgnoreErrors>false</IgnoreErrors>
+		</ImportSettings>
+	</Execute>
+</Request>
